@@ -3,8 +3,35 @@ title: "Services"
 format: html
 ---
 
-# What We Do
+**Practical R consulting to support production, build tools, and move away from legacy systems.**
 
-- Code audits
-- Workflow diagnostics
-- Custom reporting pipelines
+I work with teams who use R in real-world contexts - research, healthcare, government, or startups - and need help making things more robust, maintainable, or usable. My work typically falls into three areas:
+
+
+### **1. Strengthening R Code for Production Use**
+Analytical code often works well for prototyping, but becomes harder to maintain as usage grows. I offer structured audits of R codebases to assess their suitability for production and provide clear, practical recommendations across structure, testing, packaging, and deployment.
+
+The audit is a short, self-contained piece of work - usually 1–2 days - resulting in a written report with findings, lightweight metrics, and suggested next steps. It’s designed to surface risks and opportunities early, especially if you’re thinking about scaling, rewriting, or handing over the codebase. In some cases, it can also serve as a starting point for a broader refactor or support engagement.
+
+This approach draws on past work refactoring and testing internal codebases, simplifying logic, and setting up CI - as well as experience building Shiny apps for NHS use and contributing to the Apache Arrow R package. The goal is always to improve robustness and maintainability without overengineering.
+
+
+### **2. Building Data Products that People Actually Use**  
+If your organisation has useful data but no clear way to surface it, I can help design and build tools that make those insights accessible. That might mean a Shiny dashboard, an automated reporting pipeline, or something more tailored.
+
+I work with teams to understand the decisions they need to support, assess the data available, and develop tools that fit into existing workflows. For example, I helped deliver a large-scale Shiny app rolled out within the NHS, backed by a PostgreSQL database, built to be used reliably by non-technical teams across clinical settings.
+
+
+### **3. Migrating from Legacy Tools to Open Source R Workflows**  
+Tools like Excel, SAS, or Stata are still widely used, but can be limiting - expensive, inflexible, and hard to integrate. I help teams explore and plan a move to R: starting with an audit of existing code and workflows, then identifying what can be translated directly, what needs rethinking, and what risks to watch for.
+
+In one project, I analysed a large SAS codebase to help scope a potential migration. By categorising operation types and identifying complex components, I was able to provide a realistic migration plan - without overpromising or underestimating what was involved.
+
+---
+
+### **How I Work**  
+Most teams I work with already have something running - a script, a dashboard, a workflow that’s grown over time. My role is to figure out what’s working, what’s slowing you down, and what changes will help now *without boxing you in later.*
+
+That could mean offering recommendations your team can implement, or delivering the changes myself - depending on what you need. The aim is always to apply the right level of engineering discipline for your context, without overcomplicating things.
+
+

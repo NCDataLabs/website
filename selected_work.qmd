@@ -1,0 +1,69 @@
+---
+title: "Selected Work"
+---
+
+**Examples of how I've applied R, Shiny, and software engineering across internal tools, public-sector systems, and open-source projects.**
+
+---
+
+### **Supporting Genomic Medicine in the NHS with R and Shiny**  
+**Type:** Client Project (Team Build)  
+**Tech Stack:** R, Shiny, Docker, HTML Widgets, SQL, APIs  
+
+As part of a cross-functional team, I contributed to a modular Shiny application supporting the rollout of genomic testing within the NHS - building on the 100,000 Genomes Project. The app allowed operational staff, lab teams, and programme managers to track genomic samples and view key metrics without needing to work directly with the complex backend systems.
+
+**What I worked on:**  
+
+- UI and server logic across multiple Shiny sub-apps  
+- Integration with APIs and SQL databases  
+- Interactive visualisations using plotly, visNetwork, sunburstR  
+- Refactoring and scaling reactive code for performance
+
+The app was built to support a national rollout and continues to be used across NHS teams.  
+[Watch the talk →](https://www.youtube.com/watch?v=dCLgpnF1DD8&ab_channel=PositPBC)
+
+---
+
+### **Refactoring a Legacy Shiny App for Maintainability**  
+**Type:** Internal Tooling (Team Lead)  
+**Tech Stack:** R, Shiny, SQL, CI/CD  
+
+While at Novartis, I led a small team responsible for maintaining an internal Shiny app used to manage R package installation requests. The codebase had become increasingly fragile and hard to maintain, with tightly coupled logic and growing technical debt.
+
+**What I worked on:**  
+
+- Refactored reactive logic to simplify control flow  
+- Introduced automated tests and CI workflows  
+- Improved onboarding for new developers by making the codebase easier to understand
+
+The changes made the application significantly more maintainable and safer to extend as the team evolved.
+
+---
+
+### **Open Source Contribution – Apache Arrow R Project**  
+**Type:** Open Source Development & Authoring  
+**Tech Stack:** R, C++, dplyr, testing infrastructure  
+
+I've been an active contributor to the Apache Arrow R project, where I've worked on extending `dplyr` support to the Arrow backend - enabling high-performance data manipulation in-memory and across file systems. I've also written extensively on the topic, including:
+
+- **[Scaling up with R and Arrow](https://arrowrbook.com)** - a full-length book on working with large datasets in R using Arrow, to be published in print in 2025  
+- **[Arrow R Cookbook](https://arrow.apache.org/cookbook/r/)** - practical examples for using Arrow effectively in R
+
+This work shapes how I think about reproducibility, performance, and long-term support in both open source and consulting contexts.
+
+---
+
+### **Scoping a Large-Scale SAS to R Migration**  
+**Type:** Consulting – Code Audit & Planning  
+**Tech Stack:** SAS, R  
+
+As part of a consultancy engagement, I audited a large SAS codebase to help a client understand the feasibility and risk profile of migrating to R. The codebase was business-critical and had grown organically over many years.
+
+**What I worked on:**
+
+- Categorised code by complexity (e.g. SQL-style vs. custom PROC logic)  
+- Identified areas where statistical methods or parameter defaults might behave differently in R  
+- Delivered a scoped migration plan to help inform budget, risk, and staffing decisions
+
+The audit helped the client avoid assumptions about direct conversion and provided a structured way to evaluate next steps.
+

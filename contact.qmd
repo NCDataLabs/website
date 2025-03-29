@@ -1,0 +1,11 @@
+---
+title: "Get in Touch"
+---
+
+If you’d like to talk about a project, need help with a code audit or tool development, or just want to sense-check an idea, feel free to reach out.
+
+Email: [your@email.com]
+
+GitHub: github.com/thisisnic
+
+Optional: Add a [Calendly link] or short contact form if you want to make it easier to schedule time.

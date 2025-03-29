@@ -9,6 +9,12 @@ website:
         href: index.qmd
       - text: Services
         href: services.qmd
+      - text: Selected Work
+        href: selected_work.qmd
+      - text: Contact
+        href: contact.qmd
+      - text: About
+        href: about.qmd
 
 format:
   html:

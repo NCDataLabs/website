@@ -1,8 +1,42 @@
 ---
-title: "Welcome"
+title: "NC Data Labs"
+subtitle: "Production-focused R consulting. Practical solutions for code, tooling, and workflows."
 format: html
 ---
 
-# NC Data Labs
 
-Data consulting, done right. Expert guidance, zero nonsense.
+### **What I Do**  
+I help organisations get more value from their R code, whether that means strengthening existing scripts, building internal data tools, or migrating from legacy systems like SAS or Excel.
+
+Most of the teams I work with already have something in place: a Shiny app, a set of scripts, or a few internal packages. What they need is help making it more robust, more maintainable, and easier to support as it becomes more central to their work.
+
+At NC Data Labs, I offer:
+
+- **Code audits and production support** for R workflows
+- **Development of internal dashboards and tools**
+- **Migration planning** from legacy tools to open-source R solutions
+
+[Read more about services →]
+
+---
+
+### **Who I Work With**  
+Clients include teams in healthcare, government, pharma, and early-stage startups - usually those working with R, but facing growing pains as their tooling scales.
+
+Whether you're maintaining code that’s grown organically over time or looking to make better use of your internal data, I work with you to identify what’s working, what’s fragile, and what’s needed to move forward with less risk and more confidence.
+
+---
+
+### **A Bit About Me**  
+I’ve spent the last decade working across data science, software engineering, and open source - including contributing to the Apache Arrow R project, building tooling used within the NHS, and delivering workshops at international R conferences.
+
+[More about me →]
+
+---
+
+### **Get in Touch**  
+Whether you need a code audit, help designing a data tool, or want to discuss an upcoming migration, I’m happy to have a conversation.
+
+[Contact →]
+
+

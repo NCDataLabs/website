@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Services – NC Data Labs</title>
+<title>Selected Work – NC Data Labs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,11 +93,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./services.html" aria-current="page"> 
+    <a class="nav-link" href="./services.html"> 
 <span class="menu-text">Services</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./selected_work.html"> 
+    <a class="nav-link active" href="./selected_work.html" aria-current="page"> 
 <span class="menu-text">Selected Work</span></a>
   </li>  
   <li class="nav-item">
@@ -124,10 +124,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#strengthening-r-code-for-production-use" id="toc-strengthening-r-code-for-production-use" class="nav-link active" data-scroll-target="#strengthening-r-code-for-production-use"><strong>1. Strengthening R Code for Production Use</strong></a></li>
-  <li><a href="#building-data-products-that-people-actually-use" id="toc-building-data-products-that-people-actually-use" class="nav-link" data-scroll-target="#building-data-products-that-people-actually-use"><strong>2. Building Data Products that People Actually Use</strong></a></li>
-  <li><a href="#migrating-from-legacy-tools-to-open-source-r-workflows" id="toc-migrating-from-legacy-tools-to-open-source-r-workflows" class="nav-link" data-scroll-target="#migrating-from-legacy-tools-to-open-source-r-workflows"><strong>3. Migrating from Legacy Tools to Open Source R Workflows</strong></a></li>
-  <li><a href="#how-i-work" id="toc-how-i-work" class="nav-link" data-scroll-target="#how-i-work"><strong>How I Work</strong></a></li>
+  <li><a href="#supporting-genomic-medicine-in-the-nhs-with-r-and-shiny" id="toc-supporting-genomic-medicine-in-the-nhs-with-r-and-shiny" class="nav-link active" data-scroll-target="#supporting-genomic-medicine-in-the-nhs-with-r-and-shiny"><strong>Supporting Genomic Medicine in the NHS with R and Shiny</strong></a></li>
+  <li><a href="#refactoring-a-legacy-shiny-app-for-maintainability" id="toc-refactoring-a-legacy-shiny-app-for-maintainability" class="nav-link" data-scroll-target="#refactoring-a-legacy-shiny-app-for-maintainability"><strong>Refactoring a Legacy Shiny App for Maintainability</strong></a></li>
+  <li><a href="#open-source-contribution-apache-arrow-r-project" id="toc-open-source-contribution-apache-arrow-r-project" class="nav-link" data-scroll-target="#open-source-contribution-apache-arrow-r-project"><strong>Open Source Contribution – Apache Arrow R Project</strong></a></li>
+  <li><a href="#scoping-a-large-scale-sas-to-r-migration" id="toc-scoping-a-large-scale-sas-to-r-migration" class="nav-link" data-scroll-target="#scoping-a-large-scale-sas-to-r-migration"><strong>Scoping a Large-Scale SAS to R Migration</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Services</h1>
+<h1 class="title">Selected Work</h1>
 </div>
 
 
@@ -153,29 +153,70 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Practical R consulting to support production, build tools, and move away from legacy systems.</strong></p>
-<p>I work with teams who use R in real-world contexts - research, healthcare, government, or startups - and need help making things more robust, maintainable, or usable. My work typically falls into three areas:</p>
-<section id="strengthening-r-code-for-production-use" class="level3">
-<h3 class="anchored" data-anchor-id="strengthening-r-code-for-production-use"><strong>1. Strengthening R Code for Production Use</strong></h3>
-<p>Analytical code often works well for prototyping, but becomes harder to maintain as usage grows. I offer structured audits of R codebases to assess their suitability for production and provide clear, practical recommendations across structure, testing, packaging, and deployment.</p>
-<p>The audit is a short, self-contained piece of work - usually 1–2 days - resulting in a written report with findings, lightweight metrics, and suggested next steps. It’s designed to surface risks and opportunities early, especially if you’re thinking about scaling, rewriting, or handing over the codebase. In some cases, it can also serve as a starting point for a broader refactor or support engagement.</p>
-<p>This approach draws on past work refactoring and testing internal codebases, simplifying logic, and setting up CI - as well as experience building Shiny apps for NHS use and contributing to the Apache Arrow R package. The goal is always to improve robustness and maintainability without overengineering.</p>
-</section>
-<section id="building-data-products-that-people-actually-use" class="level3">
-<h3 class="anchored" data-anchor-id="building-data-products-that-people-actually-use"><strong>2. Building Data Products that People Actually Use</strong></h3>
-<p>If your organisation has useful data but no clear way to surface it, I can help design and build tools that make those insights accessible. That might mean a Shiny dashboard, an automated reporting pipeline, or something more tailored.</p>
-<p>I work with teams to understand the decisions they need to support, assess the data available, and develop tools that fit into existing workflows. For example, I helped deliver a large-scale Shiny app rolled out within the NHS, backed by a PostgreSQL database, built to be used reliably by non-technical teams across clinical settings.</p>
-</section>
-<section id="migrating-from-legacy-tools-to-open-source-r-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="migrating-from-legacy-tools-to-open-source-r-workflows"><strong>3. Migrating from Legacy Tools to Open Source R Workflows</strong></h3>
-<p>Tools like Excel, SAS, or Stata are still widely used, but can be limiting - expensive, inflexible, and hard to integrate. I help teams explore and plan a move to R: starting with an audit of existing code and workflows, then identifying what can be translated directly, what needs rethinking, and what risks to watch for.</p>
-<p>In one project, I analysed a large SAS codebase to help scope a potential migration. By categorising operation types and identifying complex components, I was able to provide a realistic migration plan - without overpromising or underestimating what was involved.</p>
+<p><strong>Examples of how I’ve applied R, Shiny, and software engineering across internal tools, public-sector systems, and open-source projects.</strong></p>
+<hr>
+<section id="supporting-genomic-medicine-in-the-nhs-with-r-and-shiny" class="level3">
+<h3 class="anchored" data-anchor-id="supporting-genomic-medicine-in-the-nhs-with-r-and-shiny"><strong>Supporting Genomic Medicine in the NHS with R and Shiny</strong></h3>
+<p><strong>Type:</strong> Client Project (Team Build)<br>
+<strong>Tech Stack:</strong> R, Shiny, Docker, HTML Widgets, SQL, APIs</p>
+<p>As part of a cross-functional team, I contributed to a modular Shiny application supporting the rollout of genomic testing within the NHS - building on the 100,000 Genomes Project. The app allowed operational staff, lab teams, and programme managers to track genomic samples and view key metrics without needing to work directly with the complex backend systems.</p>
+<p><strong>What I worked on:</strong></p>
+<ul>
+<li>UI and server logic across multiple Shiny sub-apps<br>
+</li>
+<li>Integration with APIs and SQL databases<br>
+</li>
+<li>Interactive visualisations using plotly, visNetwork, sunburstR<br>
+</li>
+<li>Refactoring and scaling reactive code for performance</li>
+</ul>
+<p>The app was built to support a national rollout and continues to be used across NHS teams.<br>
+<a href="https://www.youtube.com/watch?v=dCLgpnF1DD8&amp;ab_channel=PositPBC">Watch the talk →</a></p>
 <hr>
 </section>
-<section id="how-i-work" class="level3">
-<h3 class="anchored" data-anchor-id="how-i-work"><strong>How I Work</strong></h3>
-<p>Most teams I work with already have something running - a script, a dashboard, a workflow that’s grown over time. My role is to figure out what’s working, what’s slowing you down, and what changes will help now <em>without boxing you in later.</em></p>
-<p>That could mean offering recommendations your team can implement, or delivering the changes myself - depending on what you need. The aim is always to apply the right level of engineering discipline for your context, without overcomplicating things.</p>
+<section id="refactoring-a-legacy-shiny-app-for-maintainability" class="level3">
+<h3 class="anchored" data-anchor-id="refactoring-a-legacy-shiny-app-for-maintainability"><strong>Refactoring a Legacy Shiny App for Maintainability</strong></h3>
+<p><strong>Type:</strong> Internal Tooling (Team Lead)<br>
+<strong>Tech Stack:</strong> R, Shiny, SQL, CI/CD</p>
+<p>While at Novartis, I led a small team responsible for maintaining an internal Shiny app used to manage R package installation requests. The codebase had become increasingly fragile and hard to maintain, with tightly coupled logic and growing technical debt.</p>
+<p><strong>What I worked on:</strong></p>
+<ul>
+<li>Refactored reactive logic to simplify control flow<br>
+</li>
+<li>Introduced automated tests and CI workflows<br>
+</li>
+<li>Improved onboarding for new developers by making the codebase easier to understand</li>
+</ul>
+<p>The changes made the application significantly more maintainable and safer to extend as the team evolved.</p>
+<hr>
+</section>
+<section id="open-source-contribution-apache-arrow-r-project" class="level3">
+<h3 class="anchored" data-anchor-id="open-source-contribution-apache-arrow-r-project"><strong>Open Source Contribution – Apache Arrow R Project</strong></h3>
+<p><strong>Type:</strong> Open Source Development &amp; Authoring<br>
+<strong>Tech Stack:</strong> R, C++, dplyr, testing infrastructure</p>
+<p>I’ve been an active contributor to the Apache Arrow R project, where I’ve worked on extending <code>dplyr</code> support to the Arrow backend - enabling high-performance data manipulation in-memory and across file systems. I’ve also written extensively on the topic, including:</p>
+<ul>
+<li><strong><a href="https://arrowrbook.com">Scaling up with R and Arrow</a></strong> - a full-length book on working with large datasets in R using Arrow, to be published in print in 2025<br>
+</li>
+<li><strong><a href="https://arrow.apache.org/cookbook/r/">Arrow R Cookbook</a></strong> - practical examples for using Arrow effectively in R</li>
+</ul>
+<p>This work shapes how I think about reproducibility, performance, and long-term support in both open source and consulting contexts.</p>
+<hr>
+</section>
+<section id="scoping-a-large-scale-sas-to-r-migration" class="level3">
+<h3 class="anchored" data-anchor-id="scoping-a-large-scale-sas-to-r-migration"><strong>Scoping a Large-Scale SAS to R Migration</strong></h3>
+<p><strong>Type:</strong> Consulting – Code Audit &amp; Planning<br>
+<strong>Tech Stack:</strong> SAS, R</p>
+<p>As part of a consultancy engagement, I audited a large SAS codebase to help a client understand the feasibility and risk profile of migrating to R. The codebase was business-critical and had grown organically over many years.</p>
+<p><strong>What I worked on:</strong></p>
+<ul>
+<li>Categorised code by complexity (e.g.&nbsp;SQL-style vs.&nbsp;custom PROC logic)<br>
+</li>
+<li>Identified areas where statistical methods or parameter defaults might behave differently in R<br>
+</li>
+<li>Delivered a scoped migration plan to help inform budget, risk, and staffing decisions</li>
+</ul>
+<p>The audit helped the client avoid assumptions about direct conversion and provided a structured way to evaluate next steps.</p>
 
 
 </section>
