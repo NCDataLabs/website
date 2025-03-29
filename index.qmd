@@ -1,0 +1,8 @@
+---
+title: "Welcome"
+format: html
+---
+
+# NC Data Labs
+
+Data consulting, done right. Expert guidance, zero nonsense.

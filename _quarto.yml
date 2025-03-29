@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "NC Data Labs"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Services
+        href: services.qmd
+
+format:
+  html:
+    theme:
+      light: styles/custom-theme.scss
+    css: styles/styles.css
+    toc: true
