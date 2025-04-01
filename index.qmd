@@ -10,7 +10,7 @@ I help organisations get more value from their R code, whether that means design
 
 Some teams come to me with an idea they want to make real. Others already have something in place - a Shiny app, a few internal packages, or a growing tangle of scripts - and need help making it more robust, maintainable, and supportable as it becomes central to their work.
 
-At NC Data Labs, I offer general R consulting — from strategy and architecture to hands-on development.
+At NC Data Labs, I offer general R consulting from strategy and architecture to hands-on development.
 
 Some common ways I help clients include:
 
@@ -20,7 +20,7 @@ Some common ways I help clients include:
 - **Training and upskilling** teams in R  
 - **Advisory support** for teams growing or standardising their use of R
 
-[Read more about services →]
+[Read more about services →](services.qmd)
 
 ---
 
@@ -29,19 +29,22 @@ Some common ways I help clients include:
 Clients include teams in healthcare, government, pharma, and early-stage startups - usually those working with R, but facing growing pains as their tooling scales or their needs shift.
 
 Whether you're starting fresh or maintaining something that's grown organically,  I work with you to understand what's working, what's fragile, and what's needed to move forward with less risk and more confidence.
+
+[See selected project work →](select_work.qmd)
+
 ---
 
 ### **A Bit About Me**  
 
 I've spent the last decade working across data science, software engineering, and open source - including contributing to the Apache Arrow R project, building tooling used within the NHS, and delivering workshops at international R conferences.
 
-[More about me →]
+[More about me →](about.qmd)
 
 ---
 
 ### **Get in Touch**  
 Whether you need a code audit, help designing a data tool, or want to discuss an upcoming migration, I'm happy to have a conversation.
 
-[Contact →]
+[Contact →](contact.qmd)
 
 
