@@ -124,9 +124,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#strengthening-r-code-for-production-use" id="toc-strengthening-r-code-for-production-use" class="nav-link active" data-scroll-target="#strengthening-r-code-for-production-use"><strong>1. Strengthening R Code for Production Use</strong></a></li>
-  <li><a href="#building-data-products-that-people-actually-use" id="toc-building-data-products-that-people-actually-use" class="nav-link" data-scroll-target="#building-data-products-that-people-actually-use"><strong>2. Building Data Products that People Actually Use</strong></a></li>
+  <li><a href="#designing-and-building-internal-data-tools" id="toc-designing-and-building-internal-data-tools" class="nav-link active" data-scroll-target="#designing-and-building-internal-data-tools"><strong>1. Designing and Building Internal Data Tools</strong></a></li>
+  <li><a href="#strengthening-r-code-for-production-use" id="toc-strengthening-r-code-for-production-use" class="nav-link" data-scroll-target="#strengthening-r-code-for-production-use"><strong>2. Strengthening R Code for Production Use</strong></a></li>
   <li><a href="#migrating-from-legacy-tools-to-open-source-r-workflows" id="toc-migrating-from-legacy-tools-to-open-source-r-workflows" class="nav-link" data-scroll-target="#migrating-from-legacy-tools-to-open-source-r-workflows"><strong>3. Migrating from Legacy Tools to Open Source R Workflows</strong></a></li>
+  <li><a href="#general-r-consulting-and-team-support" id="toc-general-r-consulting-and-team-support" class="nav-link" data-scroll-target="#general-r-consulting-and-team-support"><strong>4. General R Consulting and Team Support</strong></a></li>
   <li><a href="#how-i-work" id="toc-how-i-work" class="nav-link" data-scroll-target="#how-i-work"><strong>How I Work</strong></a></li>
   </ul>
 </nav>
@@ -153,29 +154,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Practical R consulting to support production, build tools, and move away from legacy systems.</strong></p>
-<p>I work with teams who use R in real-world contexts - research, healthcare, government, or startups - and need help making things more robust, maintainable, or usable. My work typically falls into three areas:</p>
-<section id="strengthening-r-code-for-production-use" class="level3">
-<h3 class="anchored" data-anchor-id="strengthening-r-code-for-production-use"><strong>1. Strengthening R Code for Production Use</strong></h3>
-<p>Analytical code often works well for prototyping, but becomes harder to maintain as usage grows. I offer structured audits of R codebases to assess their suitability for production and provide clear, practical recommendations across structure, testing, packaging, and deployment.</p>
-<p>The audit is a short, self-contained piece of work - usually 1–2 days - resulting in a written report with findings, lightweight metrics, and suggested next steps. It’s designed to surface risks and opportunities early, especially if you’re thinking about scaling, rewriting, or handing over the codebase. In some cases, it can also serve as a starting point for a broader refactor or support engagement.</p>
-<p>This approach draws on past work refactoring and testing internal codebases, simplifying logic, and setting up CI - as well as experience building Shiny apps for NHS use and contributing to the Apache Arrow R package. The goal is always to improve robustness and maintainability without overengineering.</p>
-</section>
-<section id="building-data-products-that-people-actually-use" class="level3">
-<h3 class="anchored" data-anchor-id="building-data-products-that-people-actually-use"><strong>2. Building Data Products that People Actually Use</strong></h3>
+<p><strong>Practical R consulting — from new tool design to legacy migrations.</strong></p>
+<p>I help teams using R build and maintain robust, production-grade tools and workflows. That might mean designing something new, strengthening what already exists, or figuring out how to modernise a fragile setup. My work spans projects at every stage from initial scoping and architecture to delivery and support.</p>
+<p>I’ve worked with organisations in research, healthcare, government, and early-stage startups - usually where R is already in use, but teams need clearer structure, more confidence in their tooling, or help scaling what they’ve built.</p>
+<p>Here are some common ways I help:</p>
+<hr>
+<section id="designing-and-building-internal-data-tools" class="level3">
+<h3 class="anchored" data-anchor-id="designing-and-building-internal-data-tools"><strong>1. Designing and Building Internal Data Tools</strong></h3>
 <p>If your organisation has useful data but no clear way to surface it, I can help design and build tools that make those insights accessible. That might mean a Shiny dashboard, an automated reporting pipeline, or something more tailored.</p>
-<p>I work with teams to understand the decisions they need to support, assess the data available, and develop tools that fit into existing workflows. For example, I helped deliver a large-scale Shiny app rolled out within the NHS, backed by a PostgreSQL database, built to be used reliably by non-technical teams across clinical settings.</p>
+<p>I work with teams to understand the decisions they need to support, assess the data available, and develop tools that fit into existing workflows. This could mean creating something from scratch or rebuilding an existing tool to make it more usable, stable, and easier to support.</p>
+<p>For example, I helped develop a large-scale Shiny app deployed across the NHS, used by clinicians and lab teams to track genomic sample metadata. The app was modular, backed by a database, and designed to be supportable at scale.</p>
+<hr>
+</section>
+<section id="strengthening-r-code-for-production-use" class="level3">
+<h3 class="anchored" data-anchor-id="strengthening-r-code-for-production-use"><strong>2. Strengthening R Code for Production Use</strong></h3>
+<p>Code written for analysis often works - but it’s rarely ready for handover, scaling, or long-term use. I offer structured audits of R codebases to assess their readiness for production and suggest practical improvements across structure, testing, packaging, and deployment.</p>
+<p>These are short, self-contained pieces of work (typically 1–3 days) that result in a clear report - highlighting what’s working, what might break later, and what to prioritise next. It’s designed to surface risks and opportunities early, especially if you’re thinking about scaling, rewriting, or handing over the codebase. In some cases, it can also serve as a starting point for a broader refactor or support engagement.</p>
+<p>This draws on experience refactoring messy internals, simplifying logic, adding CI, and reviewing open source contributions for Apache Arrow. The goal is always to improve robustness and maintainability without overengineering.</p>
+<hr>
 </section>
 <section id="migrating-from-legacy-tools-to-open-source-r-workflows" class="level3">
 <h3 class="anchored" data-anchor-id="migrating-from-legacy-tools-to-open-source-r-workflows"><strong>3. Migrating from Legacy Tools to Open Source R Workflows</strong></h3>
 <p>Tools like Excel, SAS, or Stata are still widely used, but can be limiting - expensive, inflexible, and hard to integrate. I help teams explore and plan a move to R: starting with an audit of existing code and workflows, then identifying what can be translated directly, what needs rethinking, and what risks to watch for.</p>
-<p>In one project, I analysed a large SAS codebase to help scope a potential migration. By categorising operation types and identifying complex components, I was able to provide a realistic migration plan - without overpromising or underestimating what was involved.</p>
+<p>I start with a review of your existing code and workflows to map what can be converted easily, what needs redesign, and where risks sit. One past project involved analysing a large SAS codebase to scope out a realistic migration path — surfacing complexity early to avoid costly surprises later.</p>
+<hr>
+</section>
+<section id="general-r-consulting-and-team-support" class="level3">
+<h3 class="anchored" data-anchor-id="general-r-consulting-and-team-support"><strong>4. General R Consulting and Team Support</strong></h3>
+<p>Not everything fits into a box. Sometimes you need an outside perspective on a flaky pipeline, help shaping a new workflow, or someone to scope a project before committing dev time.</p>
+<p>I also offer short advisory engagements, mentoring for internal developers, and lightweight architecture or code reviews. These can be standalone or follow on from an audit or build.</p>
 <hr>
 </section>
 <section id="how-i-work" class="level3">
 <h3 class="anchored" data-anchor-id="how-i-work"><strong>How I Work</strong></h3>
-<p>Most teams I work with already have something running - a script, a dashboard, a workflow that’s grown over time. My role is to figure out what’s working, what’s slowing you down, and what changes will help now <em>without boxing you in later.</em></p>
-<p>That could mean offering recommendations your team can implement, or delivering the changes myself - depending on what you need. The aim is always to apply the right level of engineering discipline for your context, without overcomplicating things.</p>
+<p>Some teams I work with already have something in place - a script, a dashboard, or an internal package. Others are just starting to design what they need.</p>
+<p>My job is to help you move forward with less guesswork and more clarity. Sometimes that means giving you a roadmap, and other times it means building the thing. Always, it’s about finding the simplest, most practical solution for your context.</p>
+<p><a href="select_work.qmd">See selected projects →</a> <a href="./contact.html">Get in touch →</a></p>
 
 
 </section>
