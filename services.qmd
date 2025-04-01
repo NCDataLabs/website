@@ -3,35 +3,57 @@ title: "Services"
 format: html
 ---
 
-**Practical R consulting to support production, build tools, and move away from legacy systems.**
+**Practical R consulting — from new tool design to legacy migrations.**
 
-I work with teams who use R in real-world contexts - research, healthcare, government, or startups - and need help making things more robust, maintainable, or usable. My work typically falls into three areas:
+I help teams using R build and maintain robust, production-grade tools and workflows. That might mean designing something new, strengthening what already exists, or figuring out how to modernise a fragile setup. My work spans projects at every stage from initial scoping and architecture to delivery and support.
 
+I've worked with organisations in research, healthcare, government, and early-stage startups - usually where R is already in use, but teams need clearer structure, more confidence in their tooling, or help scaling what they’ve built.
 
-### **1. Strengthening R Code for Production Use**
-Analytical code often works well for prototyping, but becomes harder to maintain as usage grows. I offer structured audits of R codebases to assess their suitability for production and provide clear, practical recommendations across structure, testing, packaging, and deployment.
+Here are some common ways I help:
 
-The audit is a short, self-contained piece of work - usually 1–2 days - resulting in a written report with findings, lightweight metrics, and suggested next steps. It’s designed to surface risks and opportunities early, especially if you’re thinking about scaling, rewriting, or handing over the codebase. In some cases, it can also serve as a starting point for a broader refactor or support engagement.
+---
 
-This approach draws on past work refactoring and testing internal codebases, simplifying logic, and setting up CI - as well as experience building Shiny apps for NHS use and contributing to the Apache Arrow R package. The goal is always to improve robustness and maintainability without overengineering.
+### **1. Designing and Building Internal Data Tools**
 
-
-### **2. Building Data Products that People Actually Use**  
 If your organisation has useful data but no clear way to surface it, I can help design and build tools that make those insights accessible. That might mean a Shiny dashboard, an automated reporting pipeline, or something more tailored.
 
-I work with teams to understand the decisions they need to support, assess the data available, and develop tools that fit into existing workflows. For example, I helped deliver a large-scale Shiny app rolled out within the NHS, backed by a PostgreSQL database, built to be used reliably by non-technical teams across clinical settings.
+I work with teams to understand the decisions they need to support, assess the data available, and develop tools that fit into existing workflows. This could mean creating something from scratch or rebuilding an existing tool to make it more usable, stable, and easier to support.
 
+For example, I helped develop a large-scale Shiny app deployed across the NHS, used by clinicians and lab teams to track genomic sample metadata. The app was modular, backed by a database, and designed to be supportable at scale.
 
-### **3. Migrating from Legacy Tools to Open Source R Workflows**  
+---
+
+### **2. Strengthening R Code for Production Use**
+
+Code written for analysis often works - but it's rarely ready for handover, scaling, or long-term use. I offer structured audits of R codebases to assess their readiness for production and suggest practical improvements across structure, testing, packaging, and deployment.
+
+These are short, self-contained pieces of work (typically 1–3 days) that result in a clear report - highlighting what's working, what might break later, and what to prioritise next.  It's designed to surface risks and opportunities early, especially if you’re thinking about scaling, rewriting, or handing over the codebase. In some cases, it can also serve as a starting point for a broader refactor or support engagement.
+
+This draws on experience refactoring messy internals, simplifying logic, adding CI, and reviewing open source contributions for Apache Arrow. The goal is always to improve robustness and maintainability without overengineering.
+---
+
+### **3. Migrating from Legacy Tools to Open Source R Workflows**
+
 Tools like Excel, SAS, or Stata are still widely used, but can be limiting - expensive, inflexible, and hard to integrate. I help teams explore and plan a move to R: starting with an audit of existing code and workflows, then identifying what can be translated directly, what needs rethinking, and what risks to watch for.
 
-In one project, I analysed a large SAS codebase to help scope a potential migration. By categorising operation types and identifying complex components, I was able to provide a realistic migration plan - without overpromising or underestimating what was involved.
+I start with a review of your existing code and workflows to map what can be converted easily, what needs redesign, and where risks sit. One past project involved analysing a large SAS codebase to scope out a realistic migration path — surfacing complexity early to avoid costly surprises later.
+
+---
+
+### **4. General R Consulting and Team Support**
+
+Not everything fits into a box. Sometimes you need an outside perspective on a flaky pipeline, help shaping a new workflow, or someone to scope a project before committing dev time.
+
+I also offer short advisory engagements, mentoring for internal developers, and lightweight architecture or code reviews. These can be standalone or follow on from an audit or build.
 
 ---
 
 ### **How I Work**  
-Most teams I work with already have something running - a script, a dashboard, a workflow that’s grown over time. My role is to figure out what’s working, what’s slowing you down, and what changes will help now *without boxing you in later.*
 
-That could mean offering recommendations your team can implement, or delivering the changes myself - depending on what you need. The aim is always to apply the right level of engineering discipline for your context, without overcomplicating things.
+Some teams I work with already have something in place - a script, a dashboard, or an internal package. Others are just starting to design what they need.
 
+My job is to help you move forward with less guesswork and more clarity. Sometimes that means giving you a roadmap, and other times it means building the thing. Always, it's about finding the simplest, most practical solution for your context.
+
+[See selected projects →](select_work.qmd)
+[Get in touch →](contact.qmd)
 
