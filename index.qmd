@@ -30,7 +30,7 @@ Clients include teams in healthcare, government, pharma, and early-stage startup
 
 Whether you're starting fresh or maintaining something that's grown organically,  I work with you to understand what's working, what's fragile, and what's needed to move forward with less risk and more confidence.
 
-[See selected project work →](select_work.qmd)
+[See selected project work →](selected_work.qmd)
 
 ---
 
