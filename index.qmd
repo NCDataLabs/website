@@ -7,7 +7,7 @@ format: html
 ### **What I Do**  
 I help organisations get more value from their R code, whether that means designing and building internal tools from scratch, strengthening fragile workflows, or planning a move away from legacy systems like SAS or Excel.
 
-I’ve worked with teams at different stages — sometimes helping turn a vague idea into a working tool, other times stepping in when a Shiny app or internal script has grown too complex to manage easily. In either case, the goal is the same: to make things more robust, maintainable, and supportable as they scale.
+I’ve worked with teams at different stages; sometimes helping turn a vague idea into a working tool, other times stepping in when a Shiny app or internal script has grown too complex to manage easily. In either case, the goal is the same: to make things more robust, maintainable, and supportable as they scale.
 
 I offer R consulting across strategy, architecture, and hands-on development.
 
