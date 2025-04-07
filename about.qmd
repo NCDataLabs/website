@@ -2,16 +2,16 @@
 title: "Dr Nic Crane"
 ---
 
-**I'm Nic Crane. I'm a data scientist and software engineer working at the intersection of analysis and engineering.  I help teams using R to build robust, maintainable tools and improve the ones they've already got.**
+**I'm Nic Crane; a data scientist and software engineer working at the intersection of analysis and engineering. I help teams using R build robust, maintainable tools, or improve the ones they already rely on.**
 
-Over the past decade, I've worked across software engineering, data science, and open source, using R in production environments to get value from data, and support complex workflows.
+Over the past decade, I’ve worked across software engineering, data science, and open source; using R in production to support complex workflows and help teams get more from their data.
 
 I work across the lifecycle: designing and delivering new internal tools, auditing and refactoring fragile codebases, and advising teams on architecture, scaling, and deployment. Most of my work sits somewhere between building from scratch and making sense of what already exists.
 
-I've worked in pharma, public health, academia, and startups and I'm comfortable moving between technical and domain-focused teams. Some highlights:
+I've worked in pharma, public health, academia, and startups, and I'm comfortable moving between technical and domain-focused teams. Some highlights:
 
-- I contributed to the Apache Arrow R project, acting as package maintainer and co-authoring [Scaling Up with R and Arrow](https://arrowrbook.com/) - available online and published by CRC Press in 2025
-- I've built dashboards and internal tools supporting hundreds of concurent users that were deployed across the NHS - see my [Posit Conf talk from 2019](https://posit.co/resources/videos/the-future-s-shiny-dashboards-for-pioneering-genomic-medicine-in-r/)
-- I've led workshops at major R conferences like Posit Conf - see [Big Data in R with Arrow workshop here](https://posit-conf-2024.github.io/arrow/)
+- I contributed to the Apache Arrow R project, acting as package maintainer and co-authoring [Scaling Up with R and Arrow](https://arrowrbook.com/) - available online and published by CRC Press in 2025  
+- I’ve built dashboards and internal tools supporting hundreds of concurrent users, deployed across the NHS; see my [Posit Conf talk from 2019](https://posit.co/resources/videos/the-future-s-shiny-dashboards-for-pioneering-genomic-medicine-in-r/)  
+- I’ve led workshops at major R conferences like Posit Conf; see the [Big Data in R with Arrow workshop](https://posit-conf-2024.github.io/arrow/)
 
 Whether you're designing something new, scaling something fragile, or just trying to make your R code easier to work with, I can help.
