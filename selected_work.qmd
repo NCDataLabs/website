@@ -10,7 +10,7 @@ title: "Selected Work"
 
 I've been an active contributor to the Apache Arrow R package, where I've worked on extending `dplyr` support to Arrow - enabling high-performance data manipulation in-memory and across file systems.
 
-This work has influenced how I approach performance, reproducibility, and maintainability — both in open source and in client projects.
+This work has influenced how I approach performance, reproducibility, and maintainability - both in open source and in client projects.
 
 - **[Big Data in R with Arrow](https://posit-conf-2024.github.io/arrow/)** – workshop taught at Posit Conf (2023, 2024)  
 - **[Scaling up with R and Arrow](https://arrowrbook.com)** – co-authored book on large-scale data workflows in R, due out in 2025
