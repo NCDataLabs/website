@@ -8,7 +8,7 @@ title: "Selected Work"
 ### **Open Source Contribution – Apache Arrow Project**  
 **Type:** Open Source Development & Authoring  
 
-I've been an active contributor to the Apache Arrow R package, where I've worked on extending `dplyr` support to Arrow – enabling high-performance data manipulation in-memory and across file systems.
+I've been an active contributor to the Apache Arrow R package, where I've worked on extending `dplyr` support to Arrow - enabling high-performance data manipulation in-memory and across file systems.
 
 This work has influenced how I approach performance, reproducibility, and maintainability — both in open source and in client projects.
 
