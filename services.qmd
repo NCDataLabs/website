@@ -15,7 +15,7 @@ Most of my work falls into one of four areas:
 
 ### **1. Designing and Building Internal Data Tools**
 
-If your team has useful data but no clear way to surface it, I can help design and build tools that make it accessible. That might be a Shiny dashboard, an automated report, or something more custom — depending on what decisions it needs to support.
+If your team has useful data but no clear way to surface it, I can help design and build tools that make it accessible. That might be a Shiny dashboard, an automated report, or something more custom, depending on what decisions it needs to support.
 
 I work closely with teams to understand what’s needed, assess what data is already there, and build tools that fit into existing workflows. Sometimes that means starting from scratch. Other times it’s about rebuilding something that kind of works, but isn’t stable or maintainable.
 
