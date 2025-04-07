@@ -47,7 +47,7 @@ This kind of work is a good fit when the scope is clear and the migration needs 
 
 Not everything fits into a neat category. Sometimes you need a second pair of eyes on a fragile pipeline, help shaping a new workflow, or someone to make sense of a half-built tool before you commit more dev time.
 
-I offer flexible support for teams working in R — from lightweight code or architecture reviews to mentoring and advisory sessions. This can be a one-off chat, a review of a specific part of a codebase, or an ongoing check-in as things evolve.
+I offer flexible support for teams working in R; from lightweight code or architecture reviews to mentoring and advisory sessions. This can be a one-off chat, a review of a specific part of a codebase, or an ongoing check-in as things evolve.
 
 This is often a good entry point when you're not sure what you need yet, but know something needs to change.
 
