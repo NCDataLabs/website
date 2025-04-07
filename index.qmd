@@ -1,24 +1,22 @@
 ---
 title: "NC Data Labs"
-subtitle: "Production-focused R consulting. Practical solutions for code, tooling, and workflows."
+subtitle: "Production-grade R consulting. Practical solutions for code, tooling, and workflows."
 format: html
 ---
-
 
 ### **What I Do**  
 I help organisations get more value from their R code, whether that means designing and building internal tools from scratch, strengthening fragile workflows, or planning a move away from legacy systems like SAS or Excel.
 
-Some teams come to me with an idea they want to make real. Others already have something in place - a Shiny app, a few internal packages, or a growing tangle of scripts - and need help making it more robust, maintainable, and supportable as it becomes central to their work.
+I’ve worked with teams at different stages — sometimes helping turn a vague idea into a working tool, other times stepping in when a Shiny app or internal script has grown too complex to manage easily. In either case, the goal is the same: to make things more robust, maintainable, and supportable as they scale.
 
-At NC Data Labs, I offer general R consulting from strategy and architecture to hands-on development.
+I offer R consulting across strategy, architecture, and hands-on development.
 
-Some common ways I help clients include:
-
-- **Development of internal dashboards and tools**  
-- **Code audits and production support** for existing R workflows  
-- **Migration planning** from tools like SAS, Stata, or Excel to R  
-- **Training and upskilling** teams in R  
-- **Advisory support** for teams growing or standardising their use of R
+Some common ways I help include:  
+- Building internal dashboards and reporting tools  
+- Reviewing and strengthening existing R workflows  
+- Planning and delivering migrations to R from tools like SAS or Excel  
+- Training and mentoring teams in R  
+- Practical advice on growing and supporting R infrastructure
 
 [Read more about services →](services.qmd)
 
@@ -26,9 +24,9 @@ Some common ways I help clients include:
 
 ### **Who I Work With**  
 
-Clients include teams in healthcare, government, pharma, and early-stage startups - usually those working with R, but facing growing pains as their tooling scales or their needs shift.
+I work with teams in sectors like healthcare, government, pharma, and early-stage startups; often where R is already in use, but workflows are inconsistent or starting to strain under new demands.
 
-Whether you're starting fresh or maintaining something that's grown organically,  I work with you to understand what's working, what's fragile, and what's needed to move forward with less risk and more confidence.
+Whether you're starting from scratch or maintaining something that's grown organically, I help you figure out what’s working, what’s fragile, and what’s needed to move forward with less risk and more clarity.
 
 [See selected project work →](selected_work.qmd)
 
@@ -36,15 +34,13 @@ Whether you're starting fresh or maintaining something that's grown organically,
 
 ### **A Bit About Me**  
 
-I've spent the last decade working across data science, software engineering, and open source - including contributing to the Apache Arrow R project, building tooling used within the NHS, and delivering workshops at international R conferences.
+I’ve spent the last decade working across data science, software engineering, and open source; contributing to the Apache Arrow R project, building tooling used in the NHS, and teaching at international R conferences.
 
 [More about me →](about.qmd)
 
 ---
 
 ### **Get in Touch**  
-Whether you need a code audit, help designing a data tool, or want to discuss an upcoming migration, I'm happy to have a conversation.
+Whether you need a code audit, help designing a data tool, or want to talk through an upcoming migration, I’m happy to have a conversation.
 
 [Contact →](contact.qmd)
-
-
