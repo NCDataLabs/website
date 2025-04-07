@@ -55,7 +55,7 @@ This is often a good entry point when you're not sure what you need yet, but kno
 
 ### **How I Work**
 
-Some teams I work with already have something in place — a dashboard, a package, a half-working script. Others are just starting to design what they need.
+Some teams I work with already have something in place; a dashboard, a package, a half-working script. Others are just starting to design what they need.
 
 Wherever you're starting from, my job is to help you move forward with less guesswork and more clarity. Sometimes that means reviewing what's already there. Other times, it's helping you scope or build something new. Either way, the focus is on making things simpler, more stable, and easier to support over time.
 
