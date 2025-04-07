@@ -3,7 +3,7 @@ title: "Services"
 format: html
 ---
 
-**Practical R consulting — for new builds, existing codebases, and migration planning.**
+**Practical R consulting for new builds, existing codebases, and migration planning.**
 
 I help teams using R make their workflows more stable, usable, and production-ready. That might mean designing a tool from scratch, strengthening something fragile, or figuring out how to move away from legacy systems.
 
