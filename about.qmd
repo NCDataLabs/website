@@ -1,5 +1,5 @@
 ---
-title: "Dr Nic Crane"
+title: "Nic Crane"
 ---
 
 **I'm Nic Crane; a data scientist and software engineer working at the intersection of analysis and engineering. I help teams using R build robust, maintainable tools, or improve the ones they already rely on.**
@@ -10,8 +10,12 @@ I work across the lifecycle: designing and delivering new internal tools, auditi
 
 I've worked in pharma, public health, academia, and startups, and I'm comfortable moving between technical and domain-focused teams. Some highlights:
 
-- I contributed to the Apache Arrow R project, acting as package maintainer and co-authoring [Scaling Up with R and Arrow](https://arrowrbook.com/) - available online and published by CRC Press in 2025  
-- I’ve built dashboards and internal tools supporting hundreds of concurrent users, deployed across the NHS; see my [Posit Conf talk from 2019](https://posit.co/resources/videos/the-future-s-shiny-dashboards-for-pioneering-genomic-medicine-in-r/)  
-- I’ve led workshops at major R conferences like Posit Conf; see the [Big Data in R with Arrow workshop](https://posit-conf-2024.github.io/arrow/)
+-   I contributed to the Apache Arrow R project, acting as package maintainer and co-authoring [Scaling Up with R and Arrow](https://arrowrbook.com/) - available online and published by CRC Press in 2025\
+-   I’ve built dashboards and internal tools supporting hundreds of concurrent users, deployed across the NHS; see my [Posit Conf talk from 2019](https://posit.co/resources/videos/the-future-s-shiny-dashboards-for-pioneering-genomic-medicine-in-r/)\
+-   I’ve led workshops at major R conferences like Posit Conf; see the [Big Data in R with Arrow workshop](https://posit-conf-2024.github.io/arrow/)
 
 Whether you're designing something new, scaling something fragile, or just trying to make your R code easier to work with, I can help.
+
+![](nic_crane.jpeg){fig-align="center" width="190"}
+
+[Get in touch →](contact.qmd)

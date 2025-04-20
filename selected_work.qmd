@@ -8,6 +8,8 @@ title: "Selected Work"
 ### **Open Source Contribution – Apache Arrow Project**  
 **Type:** Open Source Development & Authoring  
 
+![](rcode.png){fig-align="center" width="214"}
+
 I've been an active contributor to the Apache Arrow R package, where I've worked on extending `dplyr` support to Arrow - enabling high-performance data manipulation in-memory and across file systems.
 
 This work has influenced how I approach performance, reproducibility, and maintainability - both in open source and in client projects.
@@ -19,6 +21,8 @@ This work has influenced how I approach performance, reproducibility, and mainta
 
 ### **Supporting Genomic Medicine in the NHS with R and Shiny**  
 **Type:** Client Project (Team Build)  
+
+![](healthcare.png){fig-align="center" width="214"}
 
 I contributed to a modular Shiny application used in the national rollout of genomic testing within the NHS, building on the 100,000 Genomes Project.  
 It let operational staff, lab teams, and programme managers track genomic samples and view key metrics without needing to interact directly with backend systems.
@@ -37,6 +41,8 @@ The app was built to support a national rollout and continues to be used across 
 ### **Refactoring a Legacy Shiny App for Maintainability**  
 **Type:** Internal Tooling (Team Lead)  
 
+![](maintainable.png){fig-align="center" width="214"}
+
 While at Novartis, I led a small team responsible for maintaining an internal Shiny app used to manage R package installation requests.  
 The codebase had become increasingly fragile and hard to maintain, with tightly coupled logic and growing technical debt.
 
@@ -52,6 +58,8 @@ The changes made the application significantly more maintainable and safer to ex
 ### **Scoping a Large-Scale SAS to R Migration**  
 **Type:** Consulting – Code Audit & Planning  
 
+![](xtor.png){fig-align="center" width="214"}
+
 As part of a consultancy engagement, I audited a large SAS codebase to help a client understand the feasibility and risk profile of migrating to R. The codebase was business-critical and had grown organically over many years.
 
 **What I worked on:**  
@@ -60,3 +68,5 @@ As part of a consultancy engagement, I audited a large SAS codebase to help a cl
 - Delivered a scoped migration plan to help inform budget, risk, and staffing decisions  
 
 The audit helped the client avoid assumptions about direct conversion and provided a structured way to evaluate next steps.
+
+[Get in touch →](contact.qmd)

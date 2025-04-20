@@ -4,43 +4,30 @@ subtitle: "Production-grade R consulting. Practical solutions for code, tooling,
 format: html
 ---
 
-### **What I Do**  
+![](rcode.png){fig-align="center" width="307"}
+
+### **What I Do**
+
+Hi, I'm Nic! I'm a data scientist, software engineer, and R developer. I am part of the team who maintain the arrow R package and co-author of Scaling Up with R and Arrow.
+
 I help organisations get more value from their R code, whether that means designing and building internal tools from scratch, strengthening fragile workflows, or planning a move away from legacy systems like SAS or Excel.
-
-I’ve worked with teams at different stages; sometimes helping turn a vague idea into a working tool, other times stepping in when a Shiny app or internal script has grown too complex to manage easily. In either case, the goal is the same: to make things more robust, maintainable, and supportable as they scale.
-
-I offer R consulting across strategy, architecture, and hands-on development.
-
-Some common ways I help include:  
-- Building internal dashboards and reporting tools  
-- Reviewing and strengthening existing R workflows  
-- Planning and delivering migrations to R from tools like SAS or Excel  
-- Training and mentoring teams in R  
-- Practical advice on growing and supporting R infrastructure
 
 [Read more about services →](services.qmd)
 
----
+------------------------------------------------------------------------
 
-### **Who I Work With**  
+### **A Bit About Me**
 
-I work with teams in sectors like healthcare, government, pharma, and early-stage startups; often where R is already in use, but workflows are inconsistent or starting to strain under new demands.
-
-Whether you're starting from scratch or maintaining something that's grown organically, I help you figure out what’s working, what’s fragile, and what’s needed to move forward with less risk and more clarity.
+I've spent the last decade working across data science, software engineering, and open source; contributing to the Apache Arrow R project, building tooling used in the NHS, and teaching at international R conferences.
 
 [See selected project work →](selected_work.qmd)
 
----
-
-### **A Bit About Me**  
-
-I’ve spent the last decade working across data science, software engineering, and open source; contributing to the Apache Arrow R project, building tooling used in the NHS, and teaching at international R conferences.
-
 [More about me →](about.qmd)
 
----
+------------------------------------------------------------------------
 
-### **Get in Touch**  
-Whether you need a code audit, help designing a data tool, or want to talk through an upcoming migration, I’m happy to have a conversation.
+### **Get in Touch**
+
+Whether you need a code audit, help designing a data tool, or want to talk through an upcoming migration, I'm happy to have a conversation.
 
 [Contact →](contact.qmd)
