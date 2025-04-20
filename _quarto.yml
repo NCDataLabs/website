@@ -3,6 +3,7 @@ project:
 
 website:
   title: "NC Data Labs"
+  google-analytics: G-QP16Z1MVTP 
   navbar:
     left:
       - text: Home
