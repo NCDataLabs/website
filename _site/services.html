@@ -133,10 +133,10 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#designing-and-building-internal-data-tools" id="toc-designing-and-building-internal-data-tools" class="nav-link active" data-scroll-target="#designing-and-building-internal-data-tools"><strong>1. Designing and Building Internal Data Tools</strong></a></li>
-  <li><a href="#strengthening-r-code-for-production-use" id="toc-strengthening-r-code-for-production-use" class="nav-link" data-scroll-target="#strengthening-r-code-for-production-use"><strong>2. Strengthening R Code for Production Use</strong></a></li>
-  <li><a href="#planning-and-delivering-migrations-to-r-from-sas-stata-or-excel" id="toc-planning-and-delivering-migrations-to-r-from-sas-stata-or-excel" class="nav-link" data-scroll-target="#planning-and-delivering-migrations-to-r-from-sas-stata-or-excel"><strong>3. Planning and Delivering Migrations to R from SAS, Stata, or Excel</strong></a></li>
-  <li><a href="#general-r-consulting-and-team-support" id="toc-general-r-consulting-and-team-support" class="nav-link" data-scroll-target="#general-r-consulting-and-team-support"><strong>4. General R Consulting and Team Support</strong></a></li>
+  <li><a href="#designing-and-building-internal-data-tools" id="toc-designing-and-building-internal-data-tools" class="nav-link active" data-scroll-target="#designing-and-building-internal-data-tools"><strong>Designing and Building Internal Data Tools</strong></a></li>
+  <li><a href="#strengthening-r-code-for-production-use" id="toc-strengthening-r-code-for-production-use" class="nav-link" data-scroll-target="#strengthening-r-code-for-production-use"><strong>Strengthening R Code for Production Use</strong></a></li>
+  <li><a href="#planning-and-delivering-migrations-to-r-from-sas-stata-or-excel" id="toc-planning-and-delivering-migrations-to-r-from-sas-stata-or-excel" class="nav-link" data-scroll-target="#planning-and-delivering-migrations-to-r-from-sas-stata-or-excel"><strong>Planning and Delivering Migrations to R from SAS, Stata, or Excel</strong></a></li>
+  <li><a href="#general-r-consulting-and-team-support" id="toc-general-r-consulting-and-team-support" class="nav-link" data-scroll-target="#general-r-consulting-and-team-support"><strong>General R Consulting and Team Support</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -162,35 +162,73 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
 </header>
 
 
-<p><strong>Practical R consulting </strong></p>
 <p>Here are some examples of the kinds of projects I work on:</p>
 <hr>
 <section id="designing-and-building-internal-data-tools" class="level3">
-<h3 class="anchored" data-anchor-id="designing-and-building-internal-data-tools"><strong>1. Designing and Building Internal Data Tools</strong></h3>
-<p>If your team has useful data but no clear way to surface it, I can help design and build tools that make it accessible. That might be a Shiny dashboard, an automated report, or something more custom, depending on what decisions it needs to support.</p>
-<p>I work closely with teams to understand what’s needed, assess what data is already there, and build tools that fit into existing workflows. Sometimes that means starting from scratch. Other times it’s about rebuilding something that kind of works, but isn’t stable or maintainable.</p>
-<p>I’ve worked on tools used by clinical and research teams across the NHS, and contributed to internal dashboards for large-scale open source and government projects. My focus is always on making things more usable and supportable; not just technically functional, but something people can actually work with.</p>
+<h3 class="anchored" data-anchor-id="designing-and-building-internal-data-tools"><strong>Designing and Building Internal Data Tools</strong></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="miportal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<p>Many of the previous projects I’ve worked on have focused on getting value out of existing data and building tools to help people make decisions or automate workflows.</p>
+<p>This could be:</p>
+<ul>
+<li>a Shiny app</li>
+<li>an automated report or dashboard</li>
+<li>an R package</li>
+<li>an API for connecting data science outputs with other systems</li>
+<li>something else entirely</li>
+</ul>
+<p>I’ve worked on projects which have been rolled out to the NHS, large scale open source projects, and internal tools for automating slow and manual processes.</p>
+<p>My approach focuses on building something that delivers clear business value aligned with your goals, and is usable and supportable, not just technically functional.</p>
 <hr>
 </section>
 <section id="strengthening-r-code-for-production-use" class="level3">
-<h3 class="anchored" data-anchor-id="strengthening-r-code-for-production-use"><strong>2. Strengthening R Code for Production Use</strong></h3>
-<p>Code that works isn’t always code you can rely on long-term. I help teams review existing R codebases to spot problems early, simplify what’s fragile, and make things easier to maintain.</p>
-<p>This could mean cleaning up tangled logic, adding input checks, improving structure, or setting up basic CI. I’ve done this in both internal teams and open-source settings; including refactoring legacy pipelines, improving test coverage, and contributing to production-grade packages.</p>
-<p>Sometimes this looks like a one-off review with a write-up of risks and priorities. Other times it turns into hands-on help refactoring or modernising what’s there. Either way, the focus is practical: what’s working, what might break later, and what’s worth fixing now.</p>
+<h3 class="anchored" data-anchor-id="strengthening-r-code-for-production-use"><strong>Strengthening R Code for Production Use</strong></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="github_actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<p>Data science is distinct from software engineering in the approach to creating data products and tools which best support the needs of an organisation; the development cycle is often much faster and tends to be supported by domain experts whose skills skew more towards the interpretation and use of the data, or complex modelling.</p>
+<p>This can mean tools which are effective to get a process off the ground need additional work to ensure that they remain efficient, reliable, and maintainable as they scale to more business-critical usage or more users.</p>
+<p>Sometimes this is as simple as ensuring code is well-tested and contains all the checks and oversight to ensure confidence in the output it provides.</p>
+<p>Other times, this might require more extensive refactoring, including things like:</p>
+<ul>
+<li>simplifying overcomplicated code and implementing best practices to reduce time and money spent on maintenance and lowering the barrier to entry for those working with it</li>
+<li>setting up CICD pipelines to automating the testing and building of code and reduce or remove manual effort</li>
+<li>implementing software engineering practices like logging, versioned release strategies, and dependency management to ensure reliability and integration with other tools</li>
+</ul>
+<p>I can help transform your existing code into robust production-quality tools, taking a practical approach which accounts for where you are now, where you want to get to, but most importantly how to get there in a way which will be sustainable in the long-term without overcomplicating things.</p>
 <hr>
 </section>
 <section id="planning-and-delivering-migrations-to-r-from-sas-stata-or-excel" class="level3">
-<h3 class="anchored" data-anchor-id="planning-and-delivering-migrations-to-r-from-sas-stata-or-excel"><strong>3. Planning and Delivering Migrations to R from SAS, Stata, or Excel</strong></h3>
-<p>Tools like SAS, Stata, or Excel still underpin a lot of internal workflows but they’re often hard to scale, audit, or maintain. I help teams plan and deliver migrations to R that are practical, phased, and grounded in how the tools are actually used.</p>
-<p>That starts with scoping: reviewing existing scripts, mapping dependencies, and figuring out what can be translated directly versus what needs redesign. From there, I can help implement the migration; reverse-engineering legacy logic, rebuilding it in R, and setting things up for long-term use.</p>
+<h3 class="anchored" data-anchor-id="planning-and-delivering-migrations-to-r-from-sas-stata-or-excel"><strong>Planning and Delivering Migrations to R from SAS, Stata, or Excel</strong></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sasmacros.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<p>Working with open source tooling like R has huge benefits like reducing or removing dependency on expensive proprietary solutions, allowing greater flexibility in what you can do with your data, enabling reproducible workflows, and being part of a huge community of practitioners that you can learn from and benefit being part of.</p>
+<p>Migrating from existing tools can present some challenges though - working out how to translate functionality from an existing legacy tool to R and reaping the benefits while minimising disruption.</p>
+<p>Some of the ways I can help with this transition include:</p>
+<ul>
+<li>upskilling new R users in R basics, focusing on the skills they need to do their job</li>
+<li>analysing legacy codebases and helping you plan the transition to R</li>
+<li>creating R packages, Shiny apps, and other data products to replace previous workflows</li>
+<li>providing training and mentoring on R best practices</li>
+<li>desigining and implementing processes for managing internal codebases in a sustainable manner</li>
+<li>and more!</li>
+</ul>
+<p>Every code migration is different, but I can help you take this step, focusing both on the technical side of things as well as the people aspects - which are just as important but easily overlooked!</p>
 <hr>
 </section>
 <section id="general-r-consulting-and-team-support" class="level3">
-<h3 class="anchored" data-anchor-id="general-r-consulting-and-team-support"><strong>4. General R Consulting and Team Support</strong></h3>
-<p>I also offer flexible support for teams working in R at a more general level where my skillset is a good match for the project.</p>
+<h3 class="anchored" data-anchor-id="general-r-consulting-and-team-support"><strong>General R Consulting and Team Support</strong></h3>
+<p>I’m also available for more general R and data science consulting and team support. Whatever it is that you need, feel free to get in touch, and we can see if I can help you, or refer you on to other wonderful folks I know in the wider R and data science ecosystem.</p>
 <hr>
-<p><a href="./selected_work.html">See selected projects →</a><br>
-<a href="./contact.html">Get in touch →</a></p>
+<p>Take a look <a href="./selected_work.html">here to see some of my previous projects</a>, or <a href="./contact.html">visit my contact page to get in touch</a>.</p>
 
 
 </section>
