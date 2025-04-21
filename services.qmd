@@ -63,7 +63,7 @@ Some of the ways I can help with this transition include:
 * analysing legacy codebases and helping you plan the transition to R
 * creating R packages, Shiny apps, and other data products to replace previous workflows
 * providing training and mentoring on R best practices 
-* desigining and implementing processes for managing internal codebases in a sustainable manner
+* designing and implementing processes for managing internal codebases in a sustainable manner
 * and more!
 
 Every code migration is different, but I can help you take this step, focusing both on the technical side of things as well as the people aspects - which are just as important but easily overlooked!

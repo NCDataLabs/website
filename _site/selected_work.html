@@ -162,18 +162,18 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
 </header>
 
 
-<p><strong>Examples of how I’ve applied R, Shiny, and software engineering across internal tools, public-sector systems, and open-source projects.</strong></p>
+<p>Examples of how I’ve applied R, Shiny, and software engineering across internal tools, public-sector systems, and open-source projects.</p>
 <hr>
 <section id="open-source-contribution-apache-arrow-project" class="level3">
 <h3 class="anchored" data-anchor-id="open-source-contribution-apache-arrow-project"><strong>Open Source Contribution – Apache Arrow Project</strong></h3>
 <p><strong>Type:</strong> Open Source Development &amp; Authoring</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="rcode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
+<p><img src="scaling_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
 </figure>
 </div>
-<p>I’ve been an active contributor to the Apache Arrow R package, where I’ve worked on extending <code>dplyr</code> support to Arrow - enabling high-performance data manipulation in-memory and across file systems.</p>
-<p>This work has influenced how I approach performance, reproducibility, and maintainability - both in open source and in client projects.</p>
+<p>I’ve been an active contributor to the Apache Arrow R package, where I’ve worked on implementing features, acting as package maintainer, and extending <code>dplyr</code> support to Arrow. This work has influenced how I approach performance, reproducibility, and maintainability - both in open source and in client projects.</p>
+<p>During this time I also taught and wrote about Arrow:</p>
 <ul>
 <li><strong><a href="https://posit-conf-2024.github.io/arrow/">Big Data in R with Arrow</a></strong> – workshop taught at Posit Conf (2023, 2024)<br>
 </li>
@@ -186,16 +186,14 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
 <p><strong>Type:</strong> Client Project (Team Build)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="healthcare.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
+<p><img src="miportal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
 </figure>
 </div>
-<p>I contributed to a modular Shiny application used in the national rollout of genomic testing within the NHS, building on the 100,000 Genomes Project.<br>
-It let operational staff, lab teams, and programme managers track genomic samples and view key metrics without needing to interact directly with backend systems.</p>
+<p>I contributed to a modular Shiny application used in the national rollout of genomic testing within the NHS, building on the 100,000 Genomes Project. It let operational staff, lab teams, and programme managers track genomic samples and view key metrics without needing to interact directly with backend systems.</p>
 <p><strong>What I worked on:</strong><br>
 - UI and server logic across multiple Shiny sub-apps<br>
 - Integration with APIs and SQL databases<br>
-- Interactive visualisations using plotly, visNetwork, sunburstR<br>
-- Refactoring and scaling reactive code for performance</p>
+- Interactive visualisations using plotly, visNetwork, sunburstR and other htmlwidget packages - Profiling, refactoring, and scaling reactive code for performance</p>
 <p>The app was built to support a national rollout and continues to be used across NHS teams.<br>
 <a href="https://www.youtube.com/watch?v=dCLgpnF1DD8&amp;ab_channel=PositPBC">Watch the talk →</a></p>
 <hr>
@@ -205,11 +203,10 @@ It let operational staff, lab teams, and programme managers track genomic sample
 <p><strong>Type:</strong> Internal Tooling (Team Lead)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="maintainable.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
+<p><img src="rpackages.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
 </figure>
 </div>
-<p>While at Novartis, I led a small team responsible for maintaining an internal Shiny app used to manage R package installation requests.<br>
-The codebase had become increasingly fragile and hard to maintain, with tightly coupled logic and growing technical debt.</p>
+<p>While at Novartis, I led a small team responsible for maintaining an internal Shiny app used to manage R package installation requests. The codebase had become increasingly fragile and hard to maintain, with tightly coupled logic and growing technical debt.</p>
 <p><strong>What I worked on:</strong><br>
 - Refactored reactive logic to simplify control flow and heavily modularised code to support maintainability<br>
 - Introduced testing strategies and CI workflows<br>
@@ -222,7 +219,7 @@ The codebase had become increasingly fragile and hard to maintain, with tightly 
 <p><strong>Type:</strong> Consulting – Code Audit &amp; Planning</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="xtor.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
+<p><img src="sasmacros.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
 </figure>
 </div>
 <p>As part of a consultancy engagement, I audited a large SAS codebase to help a client understand the feasibility and risk profile of migrating to R. The codebase was business-critical and had grown organically over many years.</p>
@@ -231,6 +228,7 @@ The codebase had become increasingly fragile and hard to maintain, with tightly 
 - Identified areas where statistical methods or parameter defaults might behave differently in R<br>
 - Delivered a scoped migration plan to help inform budget, risk, and staffing decisions</p>
 <p>The audit helped the client avoid assumptions about direct conversion and provided a structured way to evaluate next steps.</p>
+<hr>
 <p><a href="./contact.html">Get in touch →</a></p>
 
 

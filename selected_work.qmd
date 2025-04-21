@@ -2,17 +2,17 @@
 title: "Selected Work"
 ---
 
-**Examples of how I've applied R, Shiny, and software engineering across internal tools, public-sector systems, and open-source projects.**
+Examples of how I've applied R, Shiny, and software engineering across internal tools, public-sector systems, and open-source projects.
 ---
 
 ### **Open Source Contribution – Apache Arrow Project**  
 **Type:** Open Source Development & Authoring  
 
-![](rcode.png){fig-align="center" width="214"}
+![](scaling_up.png){fig-align="center" width="214"}
 
-I've been an active contributor to the Apache Arrow R package, where I've worked on extending `dplyr` support to Arrow - enabling high-performance data manipulation in-memory and across file systems.
+I've been an active contributor to the Apache Arrow R package, where I've worked on implementing features, acting as package maintainer, and extending `dplyr` support to Arrow.  This work has influenced how I approach performance, reproducibility, and maintainability - both in open source and in client projects.
 
-This work has influenced how I approach performance, reproducibility, and maintainability - both in open source and in client projects.
+During this time I also taught and wrote about Arrow: 
 
 - **[Big Data in R with Arrow](https://posit-conf-2024.github.io/arrow/)** – workshop taught at Posit Conf (2023, 2024)  
 - **[Scaling up with R and Arrow](https://arrowrbook.com)** – co-authored book on large-scale data workflows in R, due out in 2025
@@ -22,16 +22,15 @@ This work has influenced how I approach performance, reproducibility, and mainta
 ### **Supporting Genomic Medicine in the NHS with R and Shiny**  
 **Type:** Client Project (Team Build)  
 
-![](healthcare.png){fig-align="center" width="214"}
+![](miportal.png){fig-align="center" width="214"}
 
-I contributed to a modular Shiny application used in the national rollout of genomic testing within the NHS, building on the 100,000 Genomes Project.  
-It let operational staff, lab teams, and programme managers track genomic samples and view key metrics without needing to interact directly with backend systems.
+I contributed to a modular Shiny application used in the national rollout of genomic testing within the NHS, building on the 100,000 Genomes Project.  It let operational staff, lab teams, and programme managers track genomic samples and view key metrics without needing to interact directly with backend systems.
 
 **What I worked on:**  
 - UI and server logic across multiple Shiny sub-apps  
 - Integration with APIs and SQL databases  
-- Interactive visualisations using plotly, visNetwork, sunburstR  
-- Refactoring and scaling reactive code for performance  
+- Interactive visualisations using plotly, visNetwork, sunburstR and other htmlwidget packages
+- Profiling, refactoring, and scaling reactive code for performance  
 
 The app was built to support a national rollout and continues to be used across NHS teams.  
 [Watch the talk →](https://www.youtube.com/watch?v=dCLgpnF1DD8&ab_channel=PositPBC)
@@ -41,10 +40,9 @@ The app was built to support a national rollout and continues to be used across 
 ### **Refactoring a Legacy Shiny App for Maintainability**  
 **Type:** Internal Tooling (Team Lead)  
 
-![](maintainable.png){fig-align="center" width="214"}
+![](rpackages.png){fig-align="center" width="214"}
 
-While at Novartis, I led a small team responsible for maintaining an internal Shiny app used to manage R package installation requests.  
-The codebase had become increasingly fragile and hard to maintain, with tightly coupled logic and growing technical debt.
+While at Novartis, I led a small team responsible for maintaining an internal Shiny app used to manage R package installation requests.  The codebase had become increasingly fragile and hard to maintain, with tightly coupled logic and growing technical debt.
 
 **What I worked on:**  
 - Refactored reactive logic to simplify control flow and heavily modularised code to support maintainability  
@@ -58,7 +56,7 @@ The changes made the application significantly more maintainable and safer to ex
 ### **Scoping a Large-Scale SAS to R Migration**  
 **Type:** Consulting – Code Audit & Planning  
 
-![](xtor.png){fig-align="center" width="214"}
+![](sasmacros.png){fig-align="center" width="214"}
 
 As part of a consultancy engagement, I audited a large SAS codebase to help a client understand the feasibility and risk profile of migrating to R. The codebase was business-critical and had grown organically over many years.
 
@@ -68,5 +66,7 @@ As part of a consultancy engagement, I audited a large SAS codebase to help a cl
 - Delivered a scoped migration plan to help inform budget, risk, and staffing decisions  
 
 The audit helped the client avoid assumptions about direct conversion and provided a structured way to evaluate next steps.
+
+---
 
 [Get in touch →](contact.qmd)
