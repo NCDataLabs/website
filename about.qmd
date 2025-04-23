@@ -4,7 +4,7 @@ title: "Nic Crane"
 
 ![](nic_crane.jpeg){fig-align="center" width="190"}
 
-Hi, I'm Nic! I'm a data scientist, software engineer, and R consultant. I am part of the team who maintain the Apache Arrow project and co-author of [Scaling Up with R and Arrow](arrowrbook.com).
+Hi, I'm Nic! I'm a data scientist, software engineer, and R consultant. I am part of the team who maintain the Apache Arrow project and co-author of [Scaling Up with R and Arrow](https://arrowrbook.com).
 
 I've been using R for 15 years, and am an active member of various communities and sub-communities.  
 
