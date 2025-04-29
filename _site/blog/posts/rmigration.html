@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nic Crane">
+<meta name="dcterms.date" content="2025-04-28">
+<meta name="description" content="Technical migrations projects and their challenges.">
 
-<title>Services – NC Data Labs</title>
+<title>Migrating to R - Challenges and Solutions – NC Data Labs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +80,7 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="../../styles/styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -87,7 +90,7 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">NC Data Labs</span>
     </a>
   </div>
@@ -98,27 +101,27 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./services.html" aria-current="page"> 
+    <a class="nav-link" href="../../services.html"> 
 <span class="menu-text">Services</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./selected_work.html"> 
+    <a class="nav-link" href="../../selected_work.html"> 
 <span class="menu-text">Selected Work</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
+    <a class="nav-link" href="../../contact.html"> 
 <span class="menu-text">Contact</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -137,10 +140,30 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#designing-and-building-internal-data-tools" id="toc-designing-and-building-internal-data-tools" class="nav-link active" data-scroll-target="#designing-and-building-internal-data-tools"><strong>Designing and Building Internal Data Tools</strong></a></li>
-  <li><a href="#strengthening-r-code-for-production-use" id="toc-strengthening-r-code-for-production-use" class="nav-link" data-scroll-target="#strengthening-r-code-for-production-use"><strong>Strengthening R Code for Production Use</strong></a></li>
-  <li><a href="#planning-and-delivering-migrations-to-r-from-sas-stata-or-excel" id="toc-planning-and-delivering-migrations-to-r-from-sas-stata-or-excel" class="nav-link" data-scroll-target="#planning-and-delivering-migrations-to-r-from-sas-stata-or-excel"><strong>Planning and Delivering Migrations to R from SAS, Stata, or Excel</strong></a></li>
-  <li><a href="#general-r-consulting-and-team-support" id="toc-general-r-consulting-and-team-support" class="nav-link" data-scroll-target="#general-r-consulting-and-team-support"><strong>General R Consulting and Team Support</strong></a></li>
+  <li><a href="#why-migrations-to-r-are-harder-than-they-look" id="toc-why-migrations-to-r-are-harder-than-they-look" class="nav-link active" data-scroll-target="#why-migrations-to-r-are-harder-than-they-look">Why Migrations to R Are Harder Than They Look</a>
+  <ul class="collapse">
+  <li><a href="#complex-existing-codebases" id="toc-complex-existing-codebases" class="nav-link" data-scroll-target="#complex-existing-codebases">Complex existing codebases</a></li>
+  <li><a href="#skillset-gaps" id="toc-skillset-gaps" class="nav-link" data-scroll-target="#skillset-gaps">Skillset gaps</a></li>
+  <li><a href="#missing-practices-version-control-testing" id="toc-missing-practices-version-control-testing" class="nav-link" data-scroll-target="#missing-practices-version-control-testing">Missing practices (version control, testing)</a></li>
+  <li><a href="#organisational-buy-in" id="toc-organisational-buy-in" class="nav-link" data-scroll-target="#organisational-buy-in">Organisational buy-in</a></li>
+  </ul></li>
+  <li><a href="#how-to-approach-migration-effectively" id="toc-how-to-approach-migration-effectively" class="nav-link" data-scroll-target="#how-to-approach-migration-effectively">How to Approach Migration Effectively</a>
+  <ul class="collapse">
+  <li><a href="#audit-codebases-size-complexity-risk" id="toc-audit-codebases-size-complexity-risk" class="nav-link" data-scroll-target="#audit-codebases-size-complexity-risk">Audit codebases: size, complexity, risk</a></li>
+  <li><a href="#identify-quick-win-proof-of-concept-projects" id="toc-identify-quick-win-proof-of-concept-projects" class="nav-link" data-scroll-target="#identify-quick-win-proof-of-concept-projects">Identify quick-win proof-of-concept projects</a></li>
+  </ul></li>
+  <li><a href="#culture-matters-more-than-tools" id="toc-culture-matters-more-than-tools" class="nav-link" data-scroll-target="#culture-matters-more-than-tools">Culture Matters More Than Tools</a>
+  <ul class="collapse">
+  <li><a href="#supporting-users-through-change" id="toc-supporting-users-through-change" class="nav-link" data-scroll-target="#supporting-users-through-change">Supporting users through change</a></li>
+  <li><a href="#training-mentoring-lightweight-standards" id="toc-training-mentoring-lightweight-standards" class="nav-link" data-scroll-target="#training-mentoring-lightweight-standards">Training, mentoring, lightweight standards</a></li>
+  <li><a href="#building-community-and-momentum" id="toc-building-community-and-momentum" class="nav-link" data-scroll-target="#building-community-and-momentum">Building community and momentum</a></li>
+  </ul></li>
+  <li><a href="#how-i-help" id="toc-how-i-help" class="nav-link" data-scroll-target="#how-i-help">How I Help</a>
+  <ul class="collapse">
+  <li><a href="#advisory-proof-of-concept-guidance" id="toc-advisory-proof-of-concept-guidance" class="nav-link" data-scroll-target="#advisory-proof-of-concept-guidance">Advisory, proof-of-concept, guidance</a></li>
+  <li><a href="#training-options" id="toc-training-options" class="nav-link" data-scroll-target="#training-options">Training options</a></li>
+  <li><a href="#get-in-touch" id="toc-get-in-touch" class="nav-link" data-scroll-target="#get-in-touch">Get in Touch</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -149,14 +172,31 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Services</h1>
+<h1 class="title">Migrating to R - Challenges and Solutions</h1>
 </div>
 
+<div>
+  <div class="description">
+    Technical migrations projects and their challenges.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nic Crane </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 28, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -166,75 +206,82 @@ gtag('config', 'G-QP16Z1MVTP', { 'anonymize_ip': true});
 </header>
 
 
-<p>Here are some examples of the kinds of projects I work on:</p>
-<hr>
-<section id="designing-and-building-internal-data-tools" class="level3">
-<h3 class="anchored" data-anchor-id="designing-and-building-internal-data-tools"><strong>Designing and Building Internal Data Tools</strong></h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="miportal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
-</figure>
-</div>
-<p>Many of the previous projects I’ve worked on have focused on getting value out of existing data and building tools to help people make decisions or automate workflows.</p>
-<p>This could be:</p>
-<ul>
-<li>a Shiny app</li>
-<li>an automated report or dashboard</li>
-<li>an R package</li>
-<li>an API for connecting data science outputs with other systems</li>
-<li>something else entirely</li>
-</ul>
-<p>I’ve worked on projects which have been rolled out to the NHS, large scale open source projects, and internal tools for automating slow and manual processes.</p>
-<p>My approach focuses on building something that delivers clear business value aligned with your goals, and is usable and supportable, not just technically functional.</p>
-<hr>
+<p>Migrating to R isn’t just a technical rewrite; it’s a cultural and operational shift. I’ve been involved in multiple projects involving migrating to R from a previous solution like SAS or Excel, sometimes scoping out the roadmap for a complete transition, and other times doing the work itself on subcomponents of a wider project within a larger organisation. Every project is different, but common patterns (and pitfalls) emerge.</p>
+<p>It’s easy to assume that it’s just about writing code, but in reality there’s more to consider here - it’s about culture, politics, and momentum as well.</p>
+<section id="why-migrations-to-r-are-harder-than-they-look" class="level2">
+<h2 class="anchored" data-anchor-id="why-migrations-to-r-are-harder-than-they-look">Why Migrations to R Are Harder Than They Look</h2>
+<p>There are lots of reasons people choose to migrate to R from other solutions, and these tend to be a mix of wanting to move away from expensive proprietary licenses, the skillsets of new data analysts and scientists skewing more towards modern technologies like R and Python, and wanting to implement more robust practices for code being used to support wider business processes. Factor in the ability to access cutting-edge statistical methods, interoperability with the wider modern tech stack, and scope for flexibility and customisation, and it’s hard to see why not to move.</p>
+<section id="complex-existing-codebases" class="level3">
+<h3 class="anchored" data-anchor-id="complex-existing-codebases">Complex existing codebases</h3>
+<p>One of the common themes I’ve seen in migrations is large codebases which feel vast and difficult to tackle. Many organisations depend on undocumented production code, with little understanding of its complexity or volume.</p>
 </section>
-<section id="strengthening-r-code-for-production-use" class="level3">
-<h3 class="anchored" data-anchor-id="strengthening-r-code-for-production-use"><strong>Strengthening R Code for Production Use</strong></h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="github_actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
-</figure>
-</div>
-<p>Data science is distinct from software engineering in the approach to creating data products and tools which best support the needs of an organisation; the development cycle is often much faster and tends to be supported by domain experts whose skills skew more towards the interpretation and use of the data, or complex modelling.</p>
-<p>This can mean tools which are effective to get a process off the ground need additional work to ensure that they remain efficient, reliable, and maintainable as they scale to more business-critical usage or more users.</p>
-<p>Sometimes this is as simple as ensuring code is well-tested and contains all the checks and oversight to ensure confidence in the output it provides.</p>
-<p>Other times, this might require more extensive refactoring, including things like:</p>
-<ul>
-<li>simplifying overcomplicated code and implementing best practices to reduce time and money spent on maintenance and lowering the barrier to entry for those working with it</li>
-<li>setting up CICD pipelines to automating the testing and building of code and reduce or remove manual effort</li>
-<li>implementing software engineering practices like logging, versioned release strategies, and dependency management to ensure reliability and integration with other tools</li>
-</ul>
-<p>I can help transform your existing code into robust production-quality tools, taking a practical approach which accounts for where you are now, where you want to get to, but most importantly how to get there in a way which will be sustainable in the long-term without overcomplicating things.</p>
-<hr>
+<section id="skillset-gaps" class="level3">
+<h3 class="anchored" data-anchor-id="skillset-gaps">Skillset gaps</h3>
+<p>Skillsets are often mismatched with few people confident in both SAS and R. Much of the time, people are supporting legacy code which they’ve inherited from other programmers who have since moved on to other teams or left the organisation entirely and things may work but people don’t know how or why.</p>
 </section>
-<section id="planning-and-delivering-migrations-to-r-from-sas-stata-or-excel" class="level3">
-<h3 class="anchored" data-anchor-id="planning-and-delivering-migrations-to-r-from-sas-stata-or-excel"><strong>Planning and Delivering Migrations to R from SAS, Stata, or Excel</strong></h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="sasmacros.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
-</figure>
-</div>
-<p>Working with open source tooling like R has huge benefits like reducing or removing dependency on expensive proprietary solutions, allowing greater flexibility in what you can do with your data, enabling reproducible workflows, and being part of a huge community of practitioners that you can learn from and benefit being part of.</p>
-<p>Migrating from existing tools can present some challenges though - working out how to translate functionality from an existing legacy tool to R and reaping the benefits while minimising disruption.</p>
-<p>Some of the ways I can help with this transition include:</p>
-<ul>
-<li>upskilling new R users in R basics, focusing on the skills they need to do their job</li>
-<li>analysing legacy codebases and helping you plan the transition to R</li>
-<li>creating R packages, Shiny apps, and other data products to replace previous workflows</li>
-<li>providing training and mentoring on R best practices</li>
-<li>designing and implementing processes for managing internal codebases in a sustainable manner</li>
-<li>and more!</li>
-</ul>
-<p>Every code migration is different, but I can help you take this step, focusing both on the technical side of things as well as the people aspects - which are just as important but easily overlooked!</p>
-<hr>
+<section id="missing-practices-version-control-testing" class="level3">
+<h3 class="anchored" data-anchor-id="missing-practices-version-control-testing">Missing practices (version control, testing)</h3>
+<p>It’s also common to see codebases which just work but don’t follow modern practices such as using version control to track code changes and manage multiple people working on the same code, no tests or continuous integration and so the intended behaviour isn’t always well understood, is prone to bugs, and it’s impossible to confidently make changes without breaking something.</p>
 </section>
-<section id="general-r-consulting-and-team-support" class="level3">
-<h3 class="anchored" data-anchor-id="general-r-consulting-and-team-support"><strong>General R Consulting and Team Support</strong></h3>
-<p>I’m also available for more general R and data science consulting and team support. Whatever it is that you need, feel free to get in touch, and we can see if I can help you, or refer you on to other wonderful folks I know in the wider R and data science ecosystem.</p>
-<hr>
-<p>Take a look <a href="./selected_work.html">here to see some of my previous projects</a>, or <a href="./contact.html">visit my contact page to get in touch</a>.</p>
+<section id="organisational-buy-in" class="level3">
+<h3 class="anchored" data-anchor-id="organisational-buy-in">Organisational buy-in</h3>
+<p>Another challenge can be organisational commitment and buy-in. When there isn’t agreement around the change is necessary, it can be seen as time-consuming and difficult. If these transformations are not adequately supported and staff are expected to change tools without training or time to upskill, resistance is inevitable. Learning to program in R can be a rewarding experience, but without the proper setup can just be an annoyance.</p>
+<p>It’s not as simple as taking code line by line and rewriting from one language to the other. Take the example of moving from SAS to R, the different frameworks have entirely different approaches, and a direct translation tends to leave people with inefficient code. Modern approaches like LLMs can help generate the equivalent code when switching over, but often a broader view is needed to do a good job of a transformation.</p>
+</section>
+</section>
+<section id="how-to-approach-migration-effectively" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-approach-migration-effectively">How to Approach Migration Effectively</h2>
+<p>With a systematic approach which focuses on the right areas, it’s possible to do a successful migration in which the benefits are realised easily.</p>
+<section id="audit-codebases-size-complexity-risk" class="level3">
+<h3 class="anchored" data-anchor-id="audit-codebases-size-complexity-risk">Audit codebases: size, complexity, risk</h3>
+<p>One project I worked on was scoping out a migration for a large organisation which depended mostly on SAS, but had some R users, and had made the decision to transition away from SAS with a clear deadline for completion. I conducted an in-depth audit on their current setup and advised on the path forward.</p>
+<p>I started off by identifying the different stakeholders in the organisation. This is important as they tend to have divergent needs - people who are writing the code, people who are making decisions based on the results of their analyses, and people who are deploying the code in production environments.</p>
+<p>Auditing what you have is critical. As part of this project, I analysed the entire SAS codebase, scanning the code to work out how much there was and what the different SAS proc calls were. Auditing the code gives a clear view of the scope and complexity.</p>
+<p>When you have SAS code which uses, for example, mostly proc SQL, this is simpler to convert to the equivalent SQL in R. There are specific challenges which become apparent when you’re dealing with statistical analyses; there are some differences between R and SAS in terms of default parameter values and implementations of methodologies, but this can be tackled by identifying the key procs, and robustly testing outputs to compare them. There are also excellent projects like <a href="https://psiaims.github.io/CAMIS/">CAMIS</a> which provide guidance on the differences between the different languages.</p>
+<p>These audits must go beyond simple code analyses though; it’s also important to prioritise different areas of the codebase and distinguish between what is used in production versus what is more ad-hoc code.</p>
+</section>
+<section id="identify-quick-win-proof-of-concept-projects" class="level3">
+<h3 class="anchored" data-anchor-id="identify-quick-win-proof-of-concept-projects">Identify quick-win proof-of-concept projects</h3>
+<p>At this point, it’s often helpful to identify good candidates for proof-of-concept projects which allow clear demonstration of value and evidence of tangible benefits to the business. The best place to look is usually found by interviewing stakeholders and getting an idea of what really is difficult in their day-to-day work, or something which is particularly inefficient. This is where things like Shiny apps are excellent for transforming a time-consuming and manual process into something more engaging and easy to use.</p>
+<p>In one project, users relied on a painful command-line workflow involving multiple configuration files and obscure commands. We built a Shiny app to wrap around this process with intuitive dropdowns, clear instructions, and a clean interface - massively improving usability and reducing error.</p>
+<p>Quick wins demonstrate value and generate the interest and engagement needed for a migration.</p>
+</section>
+</section>
+<section id="culture-matters-more-than-tools" class="level2">
+<h2 class="anchored" data-anchor-id="culture-matters-more-than-tools">Culture Matters More Than Tools</h2>
+<p>Users are where it’s important to focus most of your efforts.</p>
+<section id="supporting-users-through-change" class="level3">
+<h3 class="anchored" data-anchor-id="supporting-users-through-change">Supporting users through change</h3>
+<p>Users who are comfortable and confident in their existing tooling can be resistant to having that taken away from them. Change can be seen as disruptive and lead to pushback. Giving people quick wins in R is important so they can quickly build confidence.</p>
+</section>
+<section id="training-mentoring-lightweight-standards" class="level3">
+<h3 class="anchored" data-anchor-id="training-mentoring-lightweight-standards">Training, mentoring, lightweight standards</h3>
+<p>A great way to get started is via training courses but there’s more that can be done here. Provide them with training on using R, and further support from experts - whether internal or external. Ensure that code is reviewed, but give clear guidance on how to conduct a good code review - make sure that it empowers and enables people rather than leaving them feeling criticised and incompetent.</p>
+<p>Support can take different forms: one-on-one mentoring, team office hours, or embedding R champions within teams.</p>
+</section>
+<section id="building-community-and-momentum" class="level3">
+<h3 class="anchored" data-anchor-id="building-community-and-momentum">Building community and momentum</h3>
+<p>Either way, change happens when people understand the benefits and feel supported. And sometimes you just have to make it fun - for example, by running hackathons where people can blend new skills with creativity, or bringing in external speakers can also generate enthusiasm. Ultimately, you need some sense of community so people feel like they’re not just working away in isolation.</p>
+</section>
+</section>
+<section id="how-i-help" class="level2">
+<h2 class="anchored" data-anchor-id="how-i-help">How I Help</h2>
+<p>I really enjoy these kinds of projects as it’s rewarding to see folks enthusiastically engage with tech which is new to them.</p>
+<section id="advisory-proof-of-concept-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="advisory-proof-of-concept-guidance">Advisory, proof-of-concept, guidance</h3>
+<p>On these kinds of projects, I tend to work in the role of advisor and implementer. What works well is to implement some kind of proof-of-concept project to both demonstrate value and then use as a prototype for what good looks like, and then provide guidance and support to teams updating their own codebases. I don’t tend to offer full codebase rewrites - the point is to enable teams to be self-reliant and empower them to be able to move independently in the longer term. That said, sometimes it makes sense for me to rewrite the more complex areas or provide additional support in terms of code reviews and introduction of best practices.</p>
+</section>
+<section id="training-options" class="level3">
+<h3 class="anchored" data-anchor-id="training-options">Training options</h3>
+<p>I also offer training courses and support - whether that’s introductory R, more complex topics like working with version control, writing R packages, or a more bespoke course tailored to your needs.</p>
+<p>The key thing here is providing structure and clarity, planning out the various stages, helping you identify what actions and infrastructure you’ll need in each part, and working out a path to make this work for you and your organisation.</p>
+</section>
+<section id="get-in-touch" class="level3">
+<h3 class="anchored" data-anchor-id="get-in-touch">Get in Touch</h3>
+<p>If you’re planning a migration or are stuck partway through one and need experienced support, I can help you move it forward. <a href="../../contact.html">Get in touch</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

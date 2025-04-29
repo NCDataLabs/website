@@ -4,6 +4,7 @@ project:
 website:
   title: "NC Data Labs"
   google-analytics: G-QP16Z1MVTP 
+  site-url: https://www.ncdatalabs.com
   navbar:
     left:
       - text: Home
@@ -16,6 +17,8 @@ website:
         href: contact.qmd
       - text: About
         href: about.qmd
+      - text: Blog
+        href: ./blog/index.qmd
 
 format:
   html:

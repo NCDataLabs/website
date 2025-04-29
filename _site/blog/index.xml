@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>NC Data Labs</title>
+<link>https://www.ncdatalabs.com/blog/</link>
+<atom:link href="https://www.ncdatalabs.com/blog/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.5.57</generator>
+<lastBuildDate>Sun, 27 Apr 2025 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Migrating to R - Challenges and Solutions</title>
+  <dc:creator>Nic Crane</dc:creator>
+  <link>https://www.ncdatalabs.com/blog/posts/rmigration.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Migrating to R isn’t just a technical rewrite; it’s a cultural and operational shift. I’ve been involved in multiple projects involving migrating to R from a previous solution like SAS or Excel, sometimes scoping out the roadmap for a complete transition, and other times doing the work itself on subcomponents of a wider project within a larger organisation. Every project is different, but common patterns (and pitfalls) emerge.</p>
+<p>It’s easy to assume that it’s just about writing code, but in reality there’s more to consider here - it’s about culture, politics, and momentum as well.</p>
+<section id="why-migrations-to-r-are-harder-than-they-look" class="level2">
+<h2 class="anchored" data-anchor-id="why-migrations-to-r-are-harder-than-they-look">Why Migrations to R Are Harder Than They Look</h2>
+<p>There are lots of reasons people choose to migrate to R from other solutions, and these tend to be a mix of wanting to move away from expensive proprietary licenses, the skillsets of new data analysts and scientists skewing more towards modern technologies like R and Python, and wanting to implement more robust practices for code being used to support wider business processes. Factor in the ability to access cutting-edge statistical methods, interoperability with the wider modern tech stack, and scope for flexibility and customisation, and it’s hard to see why not to move.</p>
+<section id="complex-existing-codebases" class="level3">
+<h3 class="anchored" data-anchor-id="complex-existing-codebases">Complex existing codebases</h3>
+<p>One of the common themes I’ve seen in migrations is large codebases which feel vast and difficult to tackle. Many organisations depend on undocumented production code, with little understanding of its complexity or volume.</p>
+</section>
+<section id="skillset-gaps" class="level3">
+<h3 class="anchored" data-anchor-id="skillset-gaps">Skillset gaps</h3>
+<p>Skillsets are often mismatched with few people confident in both SAS and R. Much of the time, people are supporting legacy code which they’ve inherited from other programmers who have since moved on to other teams or left the organisation entirely and things may work but people don’t know how or why.</p>
+</section>
+<section id="missing-practices-version-control-testing" class="level3">
+<h3 class="anchored" data-anchor-id="missing-practices-version-control-testing">Missing practices (version control, testing)</h3>
+<p>It’s also common to see codebases which just work but don’t follow modern practices such as using version control to track code changes and manage multiple people working on the same code, no tests or continuous integration and so the intended behaviour isn’t always well understood, is prone to bugs, and it’s impossible to confidently make changes without breaking something.</p>
+</section>
+<section id="organisational-buy-in" class="level3">
+<h3 class="anchored" data-anchor-id="organisational-buy-in">Organisational buy-in</h3>
+<p>Another challenge can be organisational commitment and buy-in. When there isn’t agreement around the change is necessary, it can be seen as time-consuming and difficult. If these transformations are not adequately supported and staff are expected to change tools without training or time to upskill, resistance is inevitable. Learning to program in R can be a rewarding experience, but without the proper setup can just be an annoyance.</p>
+<p>It’s not as simple as taking code line by line and rewriting from one language to the other. Take the example of moving from SAS to R, the different frameworks have entirely different approaches, and a direct translation tends to leave people with inefficient code. Modern approaches like LLMs can help generate the equivalent code when switching over, but often a broader view is needed to do a good job of a transformation.</p>
+</section>
+</section>
+<section id="how-to-approach-migration-effectively" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-approach-migration-effectively">How to Approach Migration Effectively</h2>
+<p>With a systematic approach which focuses on the right areas, it’s possible to do a successful migration in which the benefits are realised easily.</p>
+<section id="audit-codebases-size-complexity-risk" class="level3">
+<h3 class="anchored" data-anchor-id="audit-codebases-size-complexity-risk">Audit codebases: size, complexity, risk</h3>
+<p>One project I worked on was scoping out a migration for a large organisation which depended mostly on SAS, but had some R users, and had made the decision to transition away from SAS with a clear deadline for completion. I conducted an in-depth audit on their current setup and advised on the path forward.</p>
+<p>I started off by identifying the different stakeholders in the organisation. This is important as they tend to have divergent needs - people who are writing the code, people who are making decisions based on the results of their analyses, and people who are deploying the code in production environments.</p>
+<p>Auditing what you have is critical. As part of this project, I analysed the entire SAS codebase, scanning the code to work out how much there was and what the different SAS proc calls were. Auditing the code gives a clear view of the scope and complexity.</p>
+<p>When you have SAS code which uses, for example, mostly proc SQL, this is simpler to convert to the equivalent SQL in R. There are specific challenges which become apparent when you’re dealing with statistical analyses; there are some differences between R and SAS in terms of default parameter values and implementations of methodologies, but this can be tackled by identifying the key procs, and robustly testing outputs to compare them. There are also excellent projects like <a href="https://psiaims.github.io/CAMIS/">CAMIS</a> which provide guidance on the differences between the different languages.</p>
+<p>These audits must go beyond simple code analyses though; it’s also important to prioritise different areas of the codebase and distinguish between what is used in production versus what is more ad-hoc code.</p>
+</section>
+<section id="identify-quick-win-proof-of-concept-projects" class="level3">
+<h3 class="anchored" data-anchor-id="identify-quick-win-proof-of-concept-projects">Identify quick-win proof-of-concept projects</h3>
+<p>At this point, it’s often helpful to identify good candidates for proof-of-concept projects which allow clear demonstration of value and evidence of tangible benefits to the business. The best place to look is usually found by interviewing stakeholders and getting an idea of what really is difficult in their day-to-day work, or something which is particularly inefficient. This is where things like Shiny apps are excellent for transforming a time-consuming and manual process into something more engaging and easy to use.</p>
+<p>In one project, users relied on a painful command-line workflow involving multiple configuration files and obscure commands. We built a Shiny app to wrap around this process with intuitive dropdowns, clear instructions, and a clean interface - massively improving usability and reducing error.</p>
+<p>Quick wins demonstrate value and generate the interest and engagement needed for a migration.</p>
+</section>
+</section>
+<section id="culture-matters-more-than-tools" class="level2">
+<h2 class="anchored" data-anchor-id="culture-matters-more-than-tools">Culture Matters More Than Tools</h2>
+<p>Users are where it’s important to focus most of your efforts.</p>
+<section id="supporting-users-through-change" class="level3">
+<h3 class="anchored" data-anchor-id="supporting-users-through-change">Supporting users through change</h3>
+<p>Users who are comfortable and confident in their existing tooling can be resistant to having that taken away from them. Change can be seen as disruptive and lead to pushback. Giving people quick wins in R is important so they can quickly build confidence.</p>
+</section>
+<section id="training-mentoring-lightweight-standards" class="level3">
+<h3 class="anchored" data-anchor-id="training-mentoring-lightweight-standards">Training, mentoring, lightweight standards</h3>
+<p>A great way to get started is via training courses but there’s more that can be done here. Provide them with training on using R, and further support from experts - whether internal or external. Ensure that code is reviewed, but give clear guidance on how to conduct a good code review - make sure that it empowers and enables people rather than leaving them feeling criticised and incompetent.</p>
+<p>Support can take different forms: one-on-one mentoring, team office hours, or embedding R champions within teams.</p>
+</section>
+<section id="building-community-and-momentum" class="level3">
+<h3 class="anchored" data-anchor-id="building-community-and-momentum">Building community and momentum</h3>
+<p>Either way, change happens when people understand the benefits and feel supported. And sometimes you just have to make it fun - for example, by running hackathons where people can blend new skills with creativity, or bringing in external speakers can also generate enthusiasm. Ultimately, you need some sense of community so people feel like they’re not just working away in isolation.</p>
+</section>
+</section>
+<section id="how-i-help" class="level2">
+<h2 class="anchored" data-anchor-id="how-i-help">How I Help</h2>
+<p>I really enjoy these kinds of projects as it’s rewarding to see folks enthusiastically engage with tech which is new to them.</p>
+<section id="advisory-proof-of-concept-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="advisory-proof-of-concept-guidance">Advisory, proof-of-concept, guidance</h3>
+<p>On these kinds of projects, I tend to work in the role of advisor and implementer. What works well is to implement some kind of proof-of-concept project to both demonstrate value and then use as a prototype for what good looks like, and then provide guidance and support to teams updating their own codebases. I don’t tend to offer full codebase rewrites - the point is to enable teams to be self-reliant and empower them to be able to move independently in the longer term. That said, sometimes it makes sense for me to rewrite the more complex areas or provide additional support in terms of code reviews and introduction of best practices.</p>
+</section>
+<section id="training-options" class="level3">
+<h3 class="anchored" data-anchor-id="training-options">Training options</h3>
+<p>I also offer training courses and support - whether that’s introductory R, more complex topics like working with version control, writing R packages, or a more bespoke course tailored to your needs.</p>
+<p>The key thing here is providing structure and clarity, planning out the various stages, helping you identify what actions and infrastructure you’ll need in each part, and working out a path to make this work for you and your organisation.</p>
+</section>
+<section id="get-in-touch" class="level3">
+<h3 class="anchored" data-anchor-id="get-in-touch">Get in Touch</h3>
+<p>If you’re planning a migration or are stuck partway through one and need experienced support, I can help you move it forward. <a href="../../contact.html">Get in touch</a>.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://www.ncdatalabs.com/blog/posts/rmigration.html</guid>
+  <pubDate>Sun, 27 Apr 2025 23:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
