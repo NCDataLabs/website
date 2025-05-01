@@ -10,7 +10,238 @@
 <atom:link href="https://www.ncdatalabs.com/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Sun, 27 Apr 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 30 Apr 2025 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Prompt Design for LLMs in Shiny Apps - Exploring {querychat} in R</title>
+  <dc:creator>Nic Crane</dc:creator>
+  <link>https://www.ncdatalabs.com/blog/posts/querychat.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>LLMs can handle straightforward conversations fluently but the unpredictable nature of responses means that more careful thought is needed when when embedding LLMs in Shiny apps.</p>
+<p>A key area to focus on is effective prompt engineering, to enable more reliable responses and really scaffold how the model “thinks”.</p>
+<p>One emerging use case in data science is allowing users to perform natural language queries against datasets without needing to formulate their questions as code or SQL queries. This lowers the barrier for entry for non-technical users and allows more flexible app workflow.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.ncdatalabs.com/blog/posts/querychat.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot of a Shiny app using querychat for natural language querying</figcaption>
+</figure>
+</div>
+<p>In preparation for my EARL 2025 workshop on integrating LLMs into Shiny apps, I explored the <a href="https://github.com/posit-dev/querychat/tree/main/r-package">querychat package</a>, written by Joe Cheng, to understand effective system prompt design for natural language data querying. It makes a great case study for effective prompt engineering for querying data.</p>
+<p>You can see a live demo of the package in action <a href="https://jcheng.shinyapps.io/sidebot/">here</a>.</p>
+<p>In this blog post, I’m going to take a look at some of the internals of the default system prompt used by querychat to show you the elements of its design you can use in other projects for working with LLMs to query data.</p>
+<section id="the-system-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="the-system-prompt">The System Prompt</h2>
+<p>When designing software containing LLM components, it’s crucial to have a good system prompt. This is the prompt which governs the overall behaviour of the LLM and is set up before the user has the chance to interact with it.</p>
+<p>In the book <a href="https://learning.oreilly.com/library/view/ai-engineering/9781098166298/">AI Engineering</a>, Chip Huyen divides LLM prompts into 3 components:</p>
+<ol type="1">
+<li>The task description</li>
+<li>Examples of how to do the task</li>
+<li>A specific task request</li>
+</ol>
+<p>Chip goes on to explain that items 1 and 2 should be included in the system prompt and then item 3 is the part that the user adds.</p>
+<p>There are specific techniques which can be used to create an effective system prompt that reduce the chance of errors, inaccuracies, and other undesirable results.</p>
+<p>I’m going to take the querychat system prompt one section at a time and discuss the techniques being used. You can see the full prompt <a href="https://github.com/posit-dev/querychat/blob/main/r-package/inst/prompt/prompt.md">here</a>.</p>
+<section id="define-a-role" class="level3">
+<h3 class="anchored" data-anchor-id="define-a-role">Define a Role</h3>
+<p>A useful starting point is asking the model to assume a specific role, which will guide the perspective it assumes when answering. This helps limit the scope of potential answers and makes results more predictable and consistent.</p>
+<p>The querychat system prompt starts off with a straightforward description of the role of the LLM and a brief overview of the kinds of tasks it will be fulfilling.</p>
+<blockquote class="blockquote">
+<p>You are a chatbot that is displayed in the sidebar of a data dashboard. You will be asked to perform various tasks on the data, such as filtering, sorting, and answering questions.</p>
+</blockquote>
+</section>
+<section id="allow-it-to-be-unsure" class="level3">
+<h3 class="anchored" data-anchor-id="allow-it-to-be-unsure">Allow it to be unsure</h3>
+<p>A common concern when working with LLMs is the risk of false information. By explicitly prompting the LLM on how to behave when it’s unsure, you reduce the chance of encountering confidently stated low-certainty responses.</p>
+<p>The querychat system prompt tells the LLM to ask users additional questions to account for uncertainty instead of just trying to generate a response based on ambiguous inputs.</p>
+<blockquote class="blockquote">
+<p>It’s important that you get clear, unambiguous instructions from the user, so if the user’s request is unclear in any way, you should ask for clarification. If you aren’t sure how to accomplish the user’s request, say so, rather than using an uncertain technique.</p>
+</blockquote>
+<p>Asking for clarification can be a useful guardrail, but it’s a trade-off between accuracy and frustrating users or slowing down simple tasks.</p>
+</section>
+<section id="give-it-cues-about-output" class="level3">
+<h3 class="anchored" data-anchor-id="give-it-cues-about-output">Give it cues about output</h3>
+<p>Without any cues as to the format of the output, many LLMs tend to err on the side of being wordy and adding extra conversational sentences. Providing cues as to the desired output format helps to both cut down this information, as well as reducing costs and speeding up responses by just returning what is needed.</p>
+<p>The querychat system prompt specifically mentions where the output will be displayed and explicitly mentions what <em>not</em> to include in the output.</p>
+<blockquote class="blockquote">
+<p>The user interface in which this conversation is being shown is a narrow sidebar of a dashboard, so keep your answers concise and don’t include unnecessary patter, nor additional prompts or offers for further assistance.</p>
+</blockquote>
+</section>
+<section id="add-context-about-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="add-context-about-the-data">Add context about the data</h3>
+<p>It’s not just what <em>not</em> to include which is important though. Even if you’re working with an app which doesn’t have the entire dataset sent to an LLM for security or cost reasons, you can still provide additional context to help guide the LLM.</p>
+<p>The querychat system prompt for a particular session is set up using <code>querychat_init()</code>, into which is also passed the data frame to be queried. High-level summary data is extracted from the dataset, and this summary forms part of the system prompt.</p>
+<p>In this case, I initialised querychat with the <code>mtcars</code> dataset, and so the system prompt contains a summary of the columns, including their names, data types, and value ranges.</p>
+<blockquote class="blockquote">
+<p>You have at your disposal a DuckDB database containing this schema:</p>
+</blockquote>
+<pre><code>Table: mtcars
+Columns:
+- mpg (FLOAT)
+  Range: 10.4 to 33.9
+- cyl (FLOAT)
+  Range: 4 to 8
+- disp (FLOAT)
+  Range: 71.1 to 472
+- hp (FLOAT)
+  Range: 52 to 335
+- drat (FLOAT)
+  Range: 2.76 to 4.93
+- wt (FLOAT)
+  Range: 1.513 to 5.424
+- qsec (FLOAT)
+  Range: 14.5 to 22.9
+- vs (FLOAT)
+  Range: 0 to 1
+- am (FLOAT)
+  Range: 0 to 1
+- gear (FLOAT)
+  Range: 3 to 5
+- carb (FLOAT)
+  Range: 1 to 8</code></pre>
+</section>
+<section id="defensive-prompt-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="defensive-prompt-engineering">Defensive prompt engineering</h3>
+<p>A potential risk in exposing LLMs to outside use is the potential use of prompt attacks to expose data which isn’t intended for public consumption or even just using the LLM for unauthorised purposes.</p>
+<p>Defending against these risks often requires checks at multiple levels depending on level of risk, but a simple approach for low-risk projects involves explicitly stating what information can and cannot be used.</p>
+<p>The querychat system prompt explicitly refers to the data which can be used in returning a response.</p>
+<blockquote class="blockquote">
+<p>For security reasons, you may only query this specific table.</p>
+</blockquote>
+<p>Note however, that this isn’t full solution to potential abuse, and in production systems it’s crucial to validate user input in more depth.</p>
+</section>
+<section id="describing-specific-tasks-part-1" class="level3">
+<h3 class="anchored">Describing specific tasks part 1</h3>
+<p>When embedding conversational LLMs into an app, you may want the LLM to be responsible for different tasks. The <a href="https://platform.openai.com/docs/guides/prompt-engineering/strategy-split-complex-tasks-into-simpler-subtasks">Open AI guide to prompt engineering</a> discusses a strategy for returning the most relevant information by breaking this down into 2 steps:</p>
+<ol type="1">
+<li>Intent classification - working out what it is that the user wants to achieve</li>
+<li>Providing additional instructions based on the user’s intent</li>
+</ol>
+<p>In a simple app, this multi-stage implementation isn’t necessary, and providing a list of possible tasks with relevant instructions can suffice.</p>
+<p>The querychat system prompt does this, describing different tasks, including the usage of tools to return the relevant information. The instructions contain lots of detail, and we can infer that these clarifications were likely added to the prompt iteratively by experimenting with shorter instructions and seeing what needed to be added to get consistent results returned. This is typical of iterative prompt design and is a key part of prompt engineering.</p>
+<blockquote class="blockquote">
+<p>There are several tasks you may be asked to do:</p>
+<h2 id="task-filtering-and-sorting" class="anchored" data-anchor-id="describing-specific-tasks-part-1">Task: Filtering and sorting</h2>
+<p>The user may ask you to perform filtering and sorting operations on the dashboard; if so, your job is to write the appropriate SQL query for this database. Then, call the tool <code>update_dashboard</code>, passing in the SQL query and a new title summarizing the query (suitable for displaying at the top of dashboard). This tool will not provide a return value; it will filter the dashboard as a side-effect, so you can treat a null tool response as success.</p>
+<ul>
+<li><strong>Call <code>update_dashboard</code> every single time</strong> the user wants to filter/sort; never tell the user you’ve updated the dashboard unless you’ve called <code>update_dashboard</code> and it returned without error.</li>
+<li>The SQL query must be a <strong>DuckDB SQL</strong> SELECT query. You may use any SQL functions supported by DuckDB, including subqueries, CTEs, and statistical functions.</li>
+<li>The user may ask to “reset” or “start over”; that means clearing the filter and title. Do this by calling <code>update_dashboard({"query": "", "title": ""})</code>.</li>
+<li>Queries passed to <code>update_dashboard</code> MUST always <strong>return all columns that are in the schema</strong> (feel free to use <code>SELECT *</code>); you must refuse the request if this requirement cannot be honored, as the downstream code that will read the queried data will not know how to display it. You may add additional columns if necessary, but the existing columns must not be removed.</li>
+<li>When calling <code>update_dashboard</code>, <strong>don’t describe the query itself</strong> unless the user asks you to explain. Don’t pretend you have access to the resulting data set, as you don’t.</li>
+</ul>
+</blockquote>
+<p>Later we’ll look at a different task example in the querychat default system prompt.</p>
+</section>
+<section id="be-specific-about-code-to-generate" class="level3">
+<h3 class="anchored" data-anchor-id="be-specific-about-code-to-generate">Be specific about code to generate</h3>
+<p>In the background, querychat is generating SQL queries to run against the specified dataset. The same task can be completed in multiple ways, and LLMs are non-deterministic - the same prompt can return different results each time.</p>
+<p>When generating code with an LLM, giving additional cues on the structure of the code will generate more predictable results.</p>
+<blockquote class="blockquote">
+<p>For reproducibility, follow these rules as well:</p>
+<ul>
+<li>Optimize the SQL query for <strong>readability over efficiency</strong>.</li>
+<li>Always filter/sort with a <strong>single SQL query</strong> that can be passed directly to <code>update_dashboard</code>, even if that SQL query is very complicated. It’s fine to use subqueries and common table expressions.</li>
+<li>In particular, you MUST NOT use the <code>query</code> tool to retrieve data and then form your filtering SQL SELECT query based on that data. This would harm reproducibility because any intermediate SQL queries will not be preserved, only the final one that’s passed to <code>update_dashboard</code>.</li>
+<li>To filter based on standard deviations, percentiles, or quantiles, use a common table expression (WITH) to calculate the stddev/percentile/quartile that is needed to create the proper WHERE clause.</li>
+<li>Include comments in the SQL to explain what each part of the query does.</li>
+</ul>
+</blockquote>
+</section>
+<section id="include-examples-of-good-responses" class="level3">
+<h3 class="anchored" data-anchor-id="include-examples-of-good-responses">Include examples of good responses</h3>
+<p>One of the most effective strategies for getting the responses you want from an LLM is to provide examples of interactions between the user and the system.</p>
+<p>This is even more important when the workflow involves tools which the LLM can call.</p>
+<p>The querychat system prompt shows a specific example of a user query, and how the LLM should use the <code>update_dashboard()</code> tool to update the dashboard and what text responses to return to the user.</p>
+<blockquote class="blockquote">
+<p>Example of filtering and sorting:</p>
+<p>[User]<br>
+Show only rows where the value of x is greater than average.<br>
+[/User]<br>
+[ToolCall]<br>
+update_dashboard({query: “SELECT * FROM tablex &gt; (SELECT AVG(x) FROM table)”, title: “Above average x values”})<br>
+[/ToolCall]<br>
+[ToolResponse]<br>
+null<br>
+[/ToolResponse]<br>
+[Assistant]<br>
+I’ve filtered the dashboard to show only rows where the value of x is greater than average.<br>
+[/Assistant]</p>
+</blockquote>
+</section>
+<section id="describing-specific-tasks-part-2" class="level3">
+<h3 class="anchored">Describing specific tasks part 2</h3>
+<p>Earlier the system prompt gave instructions for how the LLM should filter and sort the data, and went on to go into more detail about:</p>
+<ul>
+<li>which tools to call</li>
+<li>how to respond to specific user requests to start over</li>
+<li>specific guidance about the code to generate</li>
+<li>example of what a good user-system interaction might look like</li>
+</ul>
+<p>This is repeated for a different task concerning user questions about the data, and responding to vague requests.</p>
+<blockquote class="blockquote">
+<h2 id="task-answering-questions-about-the-data" class="anchored" data-anchor-id="describing-specific-tasks-part-2">Task: Answering questions about the data</h2>
+<p>The user may ask you questions about the data. You have a <code>query</code> tool available to you that can be used to perform a SQL query on the data.</p>
+<p>The response should not only contain the answer to the question, but also, a comprehensive explanation of how you came up with the answer. You can assume that the user will be able to see verbatim the SQL queries that you execute with the <code>query</code> tool.</p>
+<p>Always use SQL to count, sum, average, or otherwise aggregate the data. Do not retrieve the data and perform the aggregation yourself–if you cannot do it in SQL, you should refuse the request.</p>
+<p>Example of question answering:</p>
+<p>[User]<br>
+What are the average values of x and y?<br>
+[/User]<br>
+[ToolCall]<br>
+query({query: “SELECT AVG(x) AS average_x, AVG(y) as average_y FROM table”})<br>
+[/ToolCall]<br>
+[ToolResponse]<br>
+[{“average_x”: 3.14, “average_y”: 6.28}]<br>
+[/ToolResponse]<br>
+[Assistant]<br>
+The average value of x is 3.14. The average value of y is 6.28.<br>
+[/Assistant]</p>
+<h2 id="task-providing-general-help" class="anchored">Task: Providing general help</h2>
+<p>If the user provides a vague help request, like “Help” or “Show me instructions”, describe your own capabilities in a helpful way, including examples of questions they can ask. Be sure to mention whatever advanced statistical capabilities (standard deviation, quantiles, correlation, variance) you have.</p>
+<h3 id="showing-example-questions" class="anchored">Showing example questions</h3>
+<p>If you find yourself offering example questions to the user as part of your response, wrap the text of each prompt in <code>&lt;span class="suggestion"&gt;</code> tags. For example:</p>
+<pre><code>* &lt;span class="suggestion"&gt;Suggestion 1.&lt;/span&gt;
+* &lt;span class="suggestion"&gt;Suggestion 2.&lt;/span&gt;
+* &lt;span class="suggestion"&gt;Suggestion 3.&lt;/span&gt;</code></pre>
+</blockquote>
+</section>
+<section id="additional-context-about-tools" class="level3">
+<h3 class="anchored">Additional context about tools</h3>
+<p>The code in querychat uses duckdb to perform the queries and to ensure that the LLM has enough context to use it effectively, the system prompt adds some DuckDB-specific information to help.</p>
+<blockquote class="blockquote">
+<h2 id="duckdb-sql-tips" class="anchored" data-anchor-id="additional-context-about-tools">DuckDB SQL tips</h2>
+<ul>
+<li><code>percentile_cont</code> and <code>percentile_disc</code> are “ordered set” aggregate functions. These functions are specified using the WITHIN GROUP (ORDER BY sort_expression) syntax, and they are converted to an equivalent aggregate function that takes the ordering expression as the first argument. For example, <code>percentile_cont(fraction) WITHIN GROUP (ORDER BY column [(ASC|DESC)])</code> is equivalent to <code>quantile_cont(column, fraction ORDER BY column [(ASC|DESC)])</code>.</li>
+</ul>
+</blockquote>
+</section>
+</section>
+<section id="takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<p>The querychat system prompt is an example of how effective prompt engineering allows for natural language querying of data through the use of:</p>
+<ul>
+<li>defining a specific role for the LLM to assume when responding</li>
+<li>defining desired behaviour when the LLM is not certain of the correct response</li>
+<li>providing cues for the expected output</li>
+<li>adding context about the data</li>
+<li>defensive prompt engineering to lower the chances of abuse</li>
+<li>where there are multiple tasks, giving detailed instructions about each</li>
+<li>when code is being generated providing guidance about styling and approach</li>
+<li>include examples of good responses</li>
+</ul>
+<p>You can read more about effective prompt design in the <a href="https://ellmer.tidyverse.org/articles/prompt-design.html">{ellmer} vignette</a>, or for a longer form description I’d recommend <a href="https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough">the article linked to from the same vignette</a> by Ethan Mollick about “Good Enough Prompt Design”.</p>
+<p>I’ll be delving into these ideas and others in my EARL 2025 workshop “Deploying AI in R with {ellmer} and {shiny}: From Experimentation to Production”, which you can sign up to <a href="https://earl-conference.com/tickets/">here</a>.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://www.ncdatalabs.com/blog/posts/querychat.html</guid>
+  <pubDate>Wed, 30 Apr 2025 23:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Migrating to R - Challenges and Solutions</title>
   <dc:creator>Nic Crane</dc:creator>
