@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/workshops/index.html",
+    "items": [
+      "/workshops/outlines/arrow.html",
+      "/workshops/outlines/llmsshiny.html"
+    ]
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/posts/querychat.html",
