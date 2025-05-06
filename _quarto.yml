@@ -11,6 +11,8 @@ website:
         href: index.qmd
       - text: Services
         href: services.qmd
+      - text: Workshops
+        href: ./workshops/index.qmd
       - text: Selected Work
         href: selected_work.qmd
       - text: Contact

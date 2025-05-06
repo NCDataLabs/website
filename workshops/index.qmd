@@ -1,0 +1,8 @@
+---
+title: "Workshops"
+listing:
+  contents: outlines
+type: grid
+---
+
+Want to book a course or workshop?  [Get in touch!](../contact.qmd)
