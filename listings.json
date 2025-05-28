@@ -3,7 +3,8 @@
     "listing": "/workshops/index.html",
     "items": [
       "/workshops/outlines/arrow.html",
-      "/workshops/outlines/llmsshiny.html"
+      "/workshops/outlines/llmsshiny.html",
+      "/workshops/outlines/intro_to_R.html"
     ]
   },
   {
