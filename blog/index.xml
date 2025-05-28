@@ -10,7 +10,7 @@
 <atom:link href="https://www.ncdatalabs.com/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Wed, 30 Apr 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 01 May 2025 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Prompt Design for LLMs in Shiny Apps - Exploring {querychat} in R</title>
   <dc:creator>Nic Crane</dc:creator>
@@ -240,7 +240,7 @@ The average value of x is 3.14. The average value of y is 6.28.<br>
 
  ]]></description>
   <guid>https://www.ncdatalabs.com/blog/posts/querychat.html</guid>
-  <pubDate>Wed, 30 Apr 2025 23:00:00 GMT</pubDate>
+  <pubDate>Thu, 01 May 2025 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Migrating to R - Challenges and Solutions</title>
@@ -331,7 +331,7 @@ The average value of x is 3.14. The average value of y is 6.28.<br>
 
  ]]></description>
   <guid>https://www.ncdatalabs.com/blog/posts/rmigration.html</guid>
-  <pubDate>Sun, 27 Apr 2025 23:00:00 GMT</pubDate>
+  <pubDate>Mon, 28 Apr 2025 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
